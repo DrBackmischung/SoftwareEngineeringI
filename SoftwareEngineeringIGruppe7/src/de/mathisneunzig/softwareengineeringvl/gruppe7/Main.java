@@ -16,13 +16,8 @@ public class Main {
 	    frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 	    frame.setUndecorated(false);
 		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-
-	    JButton btn1 = new JButton("Full-Screen");
-	    JButton btn2 = new JButton("Normal");
-
+		
 	    JPanel panel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-	    panel.add(btn1);
-	    panel.add(btn2);
 	    frame.add(panel); 
 
 //	    frame.pack();
