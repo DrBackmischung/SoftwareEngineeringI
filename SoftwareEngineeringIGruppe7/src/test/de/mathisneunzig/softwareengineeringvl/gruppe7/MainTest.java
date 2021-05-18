@@ -2,13 +2,15 @@ package test.de.mathisneunzig.softwareengineeringvl.gruppe7;
 
 import org.junit.jupiter.api.*;
 
+import de.mathisneunzig.softwareengineeringvl.gruppe7.Main;
+
 class MainTest {
 	
-	static de.mathisneunzig.softwareengineeringvl.gruppe7.Main main;
+	static Main main;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
-		main = new de.mathisneunzig.softwareengineeringvl.gruppe7.Main();
+		main = new Main();
 	}
 
 	@AfterAll
