@@ -23,7 +23,7 @@ public class Main {
 	    JPanel panel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 	    panel.add(btn1);
 	    panel.add(btn2);
-	    frame.add(panel);
+	    frame.add(panel); 
 
 //	    frame.pack();
 	    frame.setVisible(true);
