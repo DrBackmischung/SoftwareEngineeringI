@@ -2,7 +2,7 @@ package test.de.mathisneunzig.softwareengineeringvl.gruppe7;
 
 import org.junit.jupiter.api.*;
 
-class Main2 {
+class MainTest {
 	
 	static de.mathisneunzig.softwareengineeringvl.gruppe7.Main main;
 
@@ -10,11 +10,11 @@ class Main2 {
 	static void setUpBeforeClass() throws Exception {
 		main = new de.mathisneunzig.softwareengineeringvl.gruppe7.Main();
 	}
-  
+
 	@AfterAll
 	static void tearDownAfterClass() throws Exception {
 	}
- 
+
 	@BeforeEach
 	void setUp() throws Exception {
 	}
@@ -24,9 +24,9 @@ class Main2 {
 	}
 
 	@Test
-	@DisplayName("Zwei Nummern werden addiert: 1 + 3 = 4")
+	@DisplayName("Zwei Nummern werden addiert: 1 + 2 = 3")
 	void test() {
-		Assertions.assertEquals(4, main.addNumber(1, 3));
+		Assertions.assertEquals(3, main.addNumber(1, 2));
 	}
 
 }
