@@ -10,7 +10,7 @@ class Main2 {
 	static void setUpBeforeClass() throws Exception {
 		main = new de.mathisneunzig.softwareengineeringvl.gruppe7.Main();
 	}
- 
+  
 	@AfterAll
 	static void tearDownAfterClass() throws Exception {
 	}
