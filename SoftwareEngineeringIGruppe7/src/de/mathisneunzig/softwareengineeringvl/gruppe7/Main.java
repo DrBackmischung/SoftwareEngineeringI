@@ -9,8 +9,6 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class Main {
-
-	static GraphicsDevice device = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices()[0];
 	
 	public static void main(String[] args) {
 		
@@ -20,19 +18,7 @@ public class Main {
 		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
 	    JButton btn1 = new JButton("Full-Screen");
-	    btn1.addActionListener(new ActionListener() {
-	        @Override
-	        public void actionPerformed(ActionEvent e) {
-	            device.setFullScreenWindow(frame);
-	        }
-	    });
 	    JButton btn2 = new JButton("Normal");
-	    btn2.addActionListener(new ActionListener() {
-	        @Override
-	        public void actionPerformed(ActionEvent e) {
-	            device.setFullScreenWindow(null);
-	        }
-	    });
 
 	    JPanel panel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 	    panel.add(btn1);
