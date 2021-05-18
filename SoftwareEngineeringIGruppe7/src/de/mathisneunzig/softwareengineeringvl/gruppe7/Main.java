@@ -22,7 +22,7 @@ public class Main {
 
 //	    frame.pack();
 	    frame.setVisible(true);
-		
+		 
 	}
 	
 	public int addNumber(int a, int b) {
