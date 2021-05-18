@@ -1,0 +1,49 @@
+name: Unit Tests
+
+# Controls when the action will run. 
+on:
+  push:
+    branches: [ main ]
+    paths:
+    - 'SoftwareEngineeringIGruppe7/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+    - 'SoftwareEngineeringIGruppe7/**'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        java: [ '8', '13', '16' ]
+    
+    name: JUnit compiling on Java version ${{ matrix.Java }}
+    # Setting up java developmengt runtime
+    steps:
+      - name: Setup Java JDK
+        uses: actions/setup-java@v2.0.0
+        with:
+          distribution: 'zulu' 
+          java-version: ${{ matrix.Java }}
+          
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout current code state
+        uses: actions/checkout@v2
+        
+      # Load junit console starter
+      - name: Download junit console starter
+        run: curl -O https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.8.0-M1/junit-platform-console-standalone-1.8.0-M1.jar
+
+      # Compile and Run Tests
+      - name: Compile and Run JUnit Tests
+        run: |
+          mkdir compiled
+          find SoftwareEngineeringIGruppe7 -name "*.java" > sources.txt
+          javac -d compiled -cp junit-platform-console-standalone-1.8.0-M1.jar @sources.txt
+          java -jar junit-platform-console-standalone-1.8.0-M1.jar --class-path compiled --scan-class-path
