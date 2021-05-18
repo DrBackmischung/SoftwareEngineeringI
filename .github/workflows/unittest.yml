@@ -44,6 +44,6 @@ jobs:
       - name: Compile and Run JUnit Tests
         run: |
           mkdir compiled
-          find SoftwareEngineeringIGruppe7/src/test/de/mathisneunzig/softwareengineeringvl/gruppe7 -name "*.java" > sources.txt
+          find SoftwareEngineeringIGruppe7/src/ -name "*.java" > sources.txt
           javac -d compiled -cp junit-platform-console-standalone-1.8.0-M1.jar @sources.txt
           java -jar junit-platform-console-standalone-1.8.0-M1.jar --class-path compiled --scan-class-path
