@@ -1,5 +1,8 @@
 package test.de.mathisneunzig.softwareengineeringvl.gruppe7;
 
+import javax.swing.JFrame;
+import javax.swing.WindowConstants;
+
 import org.junit.jupiter.api.*;
 
 import de.mathisneunzig.softwareengineeringvl.gruppe7.Main;
@@ -26,9 +29,10 @@ class MainTest {
 	}
 
 	@Test
-	@DisplayName("Zwei Nummern werden addiert: 1 + 2 = 3")
+	@DisplayName("Fenster wird geprüft")
 	void test() {
-		Assertions.assertEquals(3, main.addNumber(1, 2));
+		Assertions.assertEquals(WindowConstants.EXIT_ON_CLOSE, main.closeOperation());
+		Assertions.assertEquals(JFrame.MAXIMIZED_BOTH, main.extendedState());
 	}
 
 }

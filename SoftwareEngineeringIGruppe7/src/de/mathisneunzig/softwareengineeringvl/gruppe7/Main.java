@@ -25,8 +25,12 @@ public class Main {
 		 
 	}
 	
-	public int addNumber(int a, int b) {
-		return a+b;
+	public int closeOperation() {
+		return WindowConstants.EXIT_ON_CLOSE;
+	}
+	
+	public int extendedState() {
+		return JFrame.MAXIMIZED_BOTH;
 	}
 
 }
