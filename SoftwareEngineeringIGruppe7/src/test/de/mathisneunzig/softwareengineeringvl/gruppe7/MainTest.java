@@ -29,7 +29,7 @@ class MainTest {
 	}
 
 	@Test
-	@DisplayName("Fenster wird geprüft")
+	@DisplayName("Fenster wird geprueft")
 	void test() {
 		Assertions.assertEquals(WindowConstants.EXIT_ON_CLOSE, main.closeOperation());
 		Assertions.assertEquals(JFrame.MAXIMIZED_BOTH, main.extendedState());
