@@ -3,6 +3,8 @@ package de.mathisneunzig.softwareengineeringvl.gruppe7.gui;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
+import de.mathisneunzig.softwareengineeringvl.gruppe7.applicationservices.Message;
+
 public class MessageListener implements PropertyChangeListener {
 
     private Controller controller;

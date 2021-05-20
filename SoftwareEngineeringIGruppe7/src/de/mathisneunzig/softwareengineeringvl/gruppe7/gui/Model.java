@@ -3,6 +3,8 @@ package de.mathisneunzig.softwareengineeringvl.gruppe7.gui;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
+import de.mathisneunzig.softwareengineeringvl.gruppe7.applicationservices.Message;
+
 public class Model {
 
     public Model() {

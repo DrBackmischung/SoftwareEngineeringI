@@ -1,5 +1,8 @@
 package de.mathisneunzig.softwareengineeringvl.gruppe7.gui;
 
+import de.mathisneunzig.softwareengineeringvl.gruppe7.applicationservices.Client;
+import de.mathisneunzig.softwareengineeringvl.gruppe7.applicationservices.Server;
+
 public class Controller {
     private boolean receiving = false;
     private Server server;

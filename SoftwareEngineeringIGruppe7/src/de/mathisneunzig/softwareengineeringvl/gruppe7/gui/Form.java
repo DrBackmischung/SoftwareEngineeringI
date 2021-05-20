@@ -1,6 +1,19 @@
 package de.mathisneunzig.softwareengineeringvl.gruppe7.gui;
 
-public class Form {
+import java.awt.Cursor;
+import java.awt.HeadlessException;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import javax.swing.GroupLayout;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.LayoutStyle;
+import javax.swing.WindowConstants;
+
+public class Form extends javax.swing.JFrame {
     private Controller controller;
 
     private JButton loadData;
@@ -9,7 +22,7 @@ public class Form {
     private JLabel myLabel;
     private JScrollPane myScrollPane;
 
-    public MyForm(Controller controller) throws HeadlessException {
+    public Form(Controller controller) throws HeadlessException {
         this.controller = controller;
         init();
     }
