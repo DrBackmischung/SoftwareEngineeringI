@@ -1,8 +1,5 @@
 package test.de.mathisneunzig.softwareengineeringvl.gruppe7;
 
-import javax.swing.JFrame;
-import javax.swing.WindowConstants;
-
 import org.junit.jupiter.api.*;
 
 import de.mathisneunzig.softwareengineeringvl.gruppe7.Main;
@@ -31,8 +28,7 @@ class MainTest {
 	@Test
 	@DisplayName("Fenster wird geprueft")
 	void test() {
-		Assertions.assertEquals(WindowConstants.EXIT_ON_CLOSE, main.closeOperation());
-		Assertions.assertEquals(JFrame.MAXIMIZED_BOTH, main.extendedState());
+		
 	}
 
 }

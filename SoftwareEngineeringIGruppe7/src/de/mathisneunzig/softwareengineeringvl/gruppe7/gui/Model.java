@@ -28,7 +28,6 @@ public class Model {
         return true;
     }
 
-    //Observable Methods
     public void addPropertyChangeListener(PropertyChangeListener pcl) {
         support.addPropertyChangeListener(pcl);
     }
@@ -36,6 +35,18 @@ public class Model {
     public void removePropertyChangeListener(PropertyChangeListener pcl) {
         support.removePropertyChangeListener(pcl);
     }
-
+    
+    private int addition = 0;
+    
+    public void add(int ... a) {
+    	addition = 0;
+    	for(int i : a) {
+    		addition += i;
+    	}
+    }
+    
+    public int returnAddition() {
+    	return addition;
+    }
 
 }

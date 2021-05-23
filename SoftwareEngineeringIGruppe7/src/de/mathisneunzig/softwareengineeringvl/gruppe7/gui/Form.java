@@ -14,13 +14,18 @@ import javax.swing.LayoutStyle;
 import javax.swing.WindowConstants;
 
 public class Form extends javax.swing.JFrame {
-    private Controller controller;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private Controller controller;
 
     private JButton loadData;
     private JButton writeData;
     private JTextArea myTextArea;
-    private JLabel myLabel;
-    private JScrollPane myScrollPane;
+    private JLabel mainLabel;
+    private JScrollPane mainScrollPane;
 
     public Form(Controller controller) throws HeadlessException {
         this.controller = controller;
@@ -36,7 +41,7 @@ public class Form extends javax.swing.JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
         setName("myFrame");
-        myLabel.setText("Send: ...");
+        mainLabel.setText("Send: ...");
 
         loadData.setText("Receive Data");
         loadData.addMouseListener(new MouseAdapter() {
@@ -47,7 +52,7 @@ public class Form extends javax.swing.JFrame {
 
         myTextArea.setColumns(20);
         myTextArea.setRows(5);
-        myScrollPane.setViewportView(myTextArea);
+        mainScrollPane.setViewportView(myTextArea);
 
         writeData.setText("Send Data");
         writeData.addMouseListener(new MouseAdapter() {
@@ -63,8 +68,8 @@ public class Form extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                                            .addComponent(myLabel, GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
-                                            .addComponent(myScrollPane))
+                                            .addComponent(mainLabel, GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+                                            .addComponent(mainScrollPane))
                                     .addContainerGap())
                             .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                     .addGap(0, 0, Short.MAX_VALUE)
@@ -84,11 +89,11 @@ public class Form extends javax.swing.JFrame {
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                             .addContainerGap()
-                            .addComponent(myLabel)
+                            .addComponent(mainLabel)
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(loadData)
                             .addGap(39, 39, 39)
-                            .addComponent(myScrollPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mainScrollPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(writeData)
                             .addContainerGap(82, Short.MAX_VALUE));
@@ -116,8 +121,8 @@ public class Form extends javax.swing.JFrame {
     }
 
     public void setMyLabel(String text) {
-        myLabel.setText(text);
-        myLabel.setVisible(true);
+        mainLabel.setText(text);
+        mainLabel.setVisible(true);
     }
 
 
