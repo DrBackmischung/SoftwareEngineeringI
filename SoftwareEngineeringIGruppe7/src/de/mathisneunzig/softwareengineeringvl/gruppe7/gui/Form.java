@@ -36,6 +36,8 @@ public class Form extends javax.swing.JFrame {
         loadData = new JButton();
         writeData = new JButton();
         myTextArea = new JTextArea();
+        mainLabel = new JLabel();
+        mainScrollPane = new JScrollPane();
 
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

@@ -21,17 +21,23 @@ public class Server {
         ObjectInputStream in = null;
 
         try {
-            ServerSocket server = new ServerSocket(8888);
+            ServerSocket server = new ServerSocket(5000);
+            System.out.println("[Server] Waiting for client to connect to server...");
             client = server.accept();
+            System.out.println("[Server] Client connected.");
             out = new ObjectOutputStream(client.getOutputStream());
             in = new ObjectInputStream(client.getInputStream());
 
             message = (Message) in.readObject();
+            
+            System.out.println("[Server] Message recieved: "+message.getText());
 
             out.close();
             in.close();
             client.close();
             server.close();
+            
+            System.out.println("[Server] Connection closed.");
 
         } catch (IOException e) {
             e.printStackTrace();

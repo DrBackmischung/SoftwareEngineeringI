@@ -15,13 +15,16 @@ public class Client {
 
         try {
 
-            client = new Socket("127.0.0.1", 8888);
+            System.out.println("[Client] Client connecting to server...");
+            client = new Socket("127.0.0.1", 5000);
+            System.out.println("[Client] Client connected to server.");
             out = new ObjectOutputStream(client.getOutputStream());
             in = new ObjectInputStream(client.getInputStream());
 
             Message message = new Message(senderID, recepientID, text);
             out.writeObject(message);
             out.flush();
+            System.out.println("[Client] Message "+text+" sent to Server.");
 
             out.close();
             in.close();
