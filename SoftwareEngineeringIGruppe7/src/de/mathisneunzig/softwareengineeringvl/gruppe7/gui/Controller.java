@@ -7,11 +7,11 @@ import de.mathisneunzig.softwareengineeringvl.gruppe7.Haltestelle;
 import de.mathisneunzig.softwareengineeringvl.gruppe7.applicationservices.Server;
 
 public class Controller {
-	private boolean receiving = false;
-	private Server server;
+//	private boolean receiving = false;
+//	private Server server;
 	private Model model;
 	private View view;
-	private MessageListener listener;
+//	private MessageListener listener;
 
 	public Controller() {
 		model = new Model();
@@ -19,7 +19,7 @@ public class Controller {
 
 	public void startApplication() {
 		view = new View(this);
-		listener = new MessageListener(this);
+//		listener = new MessageListener(this);
 		view.addButtonListener(new ButtonListener(view, model));
 	}
 	
@@ -42,7 +42,7 @@ public class Controller {
 	public View getView() {
 		return view;
 	}
-	
+	 
 	public Model getModel() {
 		return model;
 	}

@@ -36,7 +36,7 @@ public class View extends JFrame {
 //		});
 //	}
 
-	/**
+	/** 
 	 * Create the frame.
 	 */
 	JComboBox cb_from;

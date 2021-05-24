@@ -157,7 +157,7 @@ public class Model {
     String connection;
     
     ArrayList<String> connections = new ArrayList<>();
-    
+     
     public void calculateConnection(Haltestelle from,  Haltestelle to) {
     	for(Linie l : lines) {
     		System.out.println("Currently: "+l.getNumber());
