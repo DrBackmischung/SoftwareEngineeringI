@@ -15,7 +15,7 @@ class MainTest {
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		c = new Controller();
-		c.startApplication();
+//		c.startApplication();
 	}
 
 	@AfterAll
