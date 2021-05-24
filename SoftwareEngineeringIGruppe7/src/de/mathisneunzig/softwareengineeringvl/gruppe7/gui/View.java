@@ -54,7 +54,16 @@ public class View extends JFrame {
 	
 	private void init() {
 		
-		String[] stops = {"Hauptbahnhof", "Westbahnhof", "Ostbahnhof", "Markt"};
+		String[] stops = {"Schönau", "Schönauschule", "Schönau Siedlung", "Waldhof Nord", "Waldhof Bahnhof", "Luzenberg", "Untermühlaustraße",
+				"Herzogenriedstraße", "Neuer Messplatz", "Carl-Benz-Straße", "Alte Feuerwache", "Abendakademie", "Marktplatz", "Paradeplatz", "Schloss",
+				"Universität", "Hauptbahnhof", "Tattersall", "Kopernikusstraße", "Krappmühlstraße", "Hochschule", "Lettestraße", "Voltastraße", "Neckarau Bahnhof", "Friedrichsstraße",
+				"Isarweg", "Dannstadter Straße", "Sandrain", "Rheinau Karlsplatz", "Neuhofer Straße", "Waldseestraße", "Distelsand", "Rheinau Bahnhof", "Neckarstadt West",
+				"Bürgermeister-Fuchs-Straße", "Neumarkt", "Kurpfalzbrücke", "MVV-Hochhaus", "Dalbergstraße", "Rheinstraße", "Rathaus-rem", "Strohmarkt", "Wasserturm",
+				"Rosengarten", "Nationaltheater", "Theresienkrankenhaus", "Universitätsklinikum", "Bibienastraße",
+				"Hauptfriedhof", "Pfeifferswörth", "Neckarplatt", "Am Aubuckel", "Liebfrauenstraße", "Blücherstraße", "Feudenheim Kirche", "Neckarstraße", "Feudenheim", 
+				"Sandhofen", "Hanfstraße", "Bürstädter Straße", "Papyrus", "Zellstoff-Fabrik", "Roche", "Altrheinstraße", "Stolberger Straße", "Kunsthalle",
+				"Hauptbahnhof Süd", "Windeckstraße", "Diesterwegschule", "Meeräckerplatz", "Markuskirche", "Franz-Sigel-Straße", "Freiheitsplatz", "Neckarau West",
+				"Tannhäuserring", "Stollenwörth", "Rheingoldhalle", "Franzosenweg", "Strandbad", "Lüderitzstraße", "Chiemseestraße", "Frobeniusstraße", "Gerhart-Hauptmann-Schule", "Fridtjof-Nansen-Weg"};
 		
 		cb_from = new JComboBox(stops);
 		cb_to   = new JComboBox(stops); 
