@@ -5,7 +5,7 @@
 | Version | Supported          |
 | ------- | ------------------ |
 | 1.0     | :x:, not yet released   |
-| Alpha Versions    | :white_check_mark                |
+| Alpha Versions    | :white_check_mark:                |
 
 ## Reporting a Vulnerability
 
