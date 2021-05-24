@@ -111,7 +111,7 @@ public class Form extends javax.swing.JFrame {
 
     private void loadDataMouseClicked(java.awt.event.MouseEvent evt) {
         try {
-            controller.receiveMessage();
+//            controller.receiveMessage();
         } catch (Exception er) {
 
         }
@@ -119,7 +119,7 @@ public class Form extends javax.swing.JFrame {
 
     private void writeDataMouseClicked(java.awt.event.MouseEvent evt) {
         String message = myTextArea.getText();
-        controller.sendMessage(message);
+//        controller.sendMessage(message);
     }
 
     public void setMyLabel(String text) {

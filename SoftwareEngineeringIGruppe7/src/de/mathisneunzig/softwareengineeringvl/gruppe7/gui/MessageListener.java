@@ -14,7 +14,7 @@ public class MessageListener implements PropertyChangeListener {
     }
 
     public void propertyChange(PropertyChangeEvent evt) {
-        controller.setViewLabel(((Message)evt.getNewValue()).getText());
+//        controller.setViewLabel(((Message)evt.getNewValue()).getText());
     }
 
  
