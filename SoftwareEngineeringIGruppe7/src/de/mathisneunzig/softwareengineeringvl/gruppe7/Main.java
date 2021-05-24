@@ -8,6 +8,7 @@ public class Main {
 		
 		Controller c = new Controller();
 		c.startApplication();
+		c.openGUI();
 		
 	}
 

@@ -19,9 +19,12 @@ public class Controller {
 
 	public void startApplication() {
 		view = new View(this);
-		view.setVisible(true);
 		listener = new MessageListener(this);
 		view.addButtonListener(new ButtonListener(view, model));
+	}
+	
+	public void openGUI() {
+		view.setVisible(true);
 	}
 	
 	public String[] getAllStopNames() {
