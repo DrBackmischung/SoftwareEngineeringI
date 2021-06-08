@@ -26,5 +26,6 @@ public class View extends JFrame {
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("New radio button");
 		rdbtnNewRadioButton.setBounds(6, 41, 109, 23);
 		contentPane.add(rdbtnNewRadioButton);
+		//safasasfasf
 	}
 }
