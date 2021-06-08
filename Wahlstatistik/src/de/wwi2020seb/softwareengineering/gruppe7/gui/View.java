@@ -17,9 +17,5 @@ public class View extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setBounds(105, 57, 89, 23);
-		contentPane.add(btnNewButton);
 	}
 }
