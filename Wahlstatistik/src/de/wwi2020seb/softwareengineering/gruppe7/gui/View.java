@@ -20,5 +20,13 @@ public class View extends JFrame {
 		contentPane.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.setBounds(10, 11, 89, 23);
+		contentPane.add(btnNewButton);
+		
+		JRadioButton rdbtnNewRadioButton = new JRadioButton("New radio button");
+		rdbtnNewRadioButton.setBounds(6, 41, 109, 23);
+		contentPane.add(rdbtnNewRadioButton);
 	}
 }
