@@ -3,6 +3,7 @@ package de.wwi2020seb.softwareengineering.gruppe7.gui;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
 
 public class View extends JFrame {
 
@@ -16,5 +17,9 @@ public class View extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.setBounds(105, 57, 89, 23);
+		contentPane.add(btnNewButton);
 	}
 }
