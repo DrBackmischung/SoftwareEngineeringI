@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
+import javax.swing.JRadioButton;
 
 public class View extends JFrame {
 
@@ -19,7 +20,11 @@ public class View extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setBounds(105, 57, 89, 23);
+		btnNewButton.setBounds(10, 11, 89, 23);
 		contentPane.add(btnNewButton);
+		
+		JRadioButton rdbtnNewRadioButton = new JRadioButton("New radio button");
+		rdbtnNewRadioButton.setBounds(6, 41, 109, 23);
+		contentPane.add(rdbtnNewRadioButton);
 	}
 }
