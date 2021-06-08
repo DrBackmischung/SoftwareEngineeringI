@@ -14,7 +14,7 @@
   <class id="2" language="java" name="de.wwi2020seb.softwareengineering.gruppe7.gui.Model" project="Wahlstatistik" 
     file="/Wahlstatistik/src/de/wwi2020seb/softwareengineering/gruppe7/gui/Model.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="99" width="209" x="762" y="322"/>    
+    <position height="-1" width="-1" x="771" y="310"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
