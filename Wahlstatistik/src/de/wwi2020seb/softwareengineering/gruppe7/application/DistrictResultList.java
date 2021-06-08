@@ -19,5 +19,7 @@ public class DistrictResultList {
 	public void addResult(ResultMap r) {
 		results.add(r);
 	}
+	
+	// moin
 
 }
