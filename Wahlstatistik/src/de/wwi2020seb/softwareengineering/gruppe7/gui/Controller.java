@@ -32,5 +32,9 @@ public class Controller {
 	public Model getModel() {
 		return model;
 	}
+	
+	public void marslStinkt() {
+		System.out.println("Oh, oh, stinki");
+	}
 
 }
