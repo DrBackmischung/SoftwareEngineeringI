@@ -27,4 +27,13 @@ public class View extends JFrame {
 		rdbtnNewRadioButton.setBounds(6, 41, 109, 23);
 		contentPane.add(rdbtnNewRadioButton);
 	}
+	
+	public void printResultOfDistrict() {
+		
+	}
+	
+	public void printResultOfCity() {
+		
+	}
+	
 }

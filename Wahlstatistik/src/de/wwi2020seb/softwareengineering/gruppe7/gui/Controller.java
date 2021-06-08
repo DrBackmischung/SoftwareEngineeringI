@@ -19,6 +19,13 @@ public class Controller {
 	
 	public void startApplication() {
 		view = new View(this);
+		prepareData(); 
+	}
+	
+	public void prepareData() {
+		/*
+		 * Hier die Berechnung machen
+		 */
 	}
 	
 	public void openGUI() {
@@ -31,10 +38,6 @@ public class Controller {
 	 
 	public Model getModel() {
 		return model;
-	}
-	
-	public void marslStinkt() {
-		System.out.println("Oh, oh, stinki");
 	}
 
 }
