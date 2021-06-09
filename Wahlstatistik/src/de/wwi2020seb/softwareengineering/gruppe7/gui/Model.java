@@ -27,7 +27,7 @@ public class Model {
 			return currentDistrictResult;
 		else
 			/*
-			 * Hier Exception einfügen
+			 * Hier Exception einfuegen
 			 */
 			return null;
 	}

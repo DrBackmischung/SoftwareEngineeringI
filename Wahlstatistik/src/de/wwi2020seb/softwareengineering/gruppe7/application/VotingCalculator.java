@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class VotingCalculator {
 /*
- * Bekommt alle DistrictResultLists und fügt alle fehlenden Personen hinzu
+ * Bekommt alle DistrictResultLists und fuegt alle fehlenden Personen hinzu
  */
 	
 	public void enrichCandidates(ResultList d, ArrayList<String> names) {
