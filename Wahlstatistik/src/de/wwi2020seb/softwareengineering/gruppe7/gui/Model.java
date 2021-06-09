@@ -3,13 +3,15 @@ package de.wwi2020seb.softwareengineering.gruppe7.gui;
 import java.util.ArrayList;
 
 import de.wwi2020seb.softwareengineering.gruppe7.application.ResultList;
+import de.wwi2020seb.softwareengineering.gruppe7.application.VotingCalculator;
 
 public class Model {
 	
 	public static Model model;
-	private static ArrayList<ResultList> results;
+	private ArrayList<ResultList> results;
 	private ResultList cityResult;
 	private ResultList currentDistrictResult = null;
+	private VotingCalculator vc = new VotingCalculator();
 
 	public static Model getInstance() {
 		if(model == null) {
@@ -48,6 +50,17 @@ public class Model {
 			}
 		}
 		return false;
+	}
+
+	public void readData(ArrayList<ResultList> data) {
+		
+		this.results = data;
+		ArrayList<String> names = vc.getAllNames(this.results);
+		for(ResultList r : this.results) {
+			vc.calculatePercentages(r);
+			vc.enrichCandidates(r, names);
+		}
+		
 	}
 
 }

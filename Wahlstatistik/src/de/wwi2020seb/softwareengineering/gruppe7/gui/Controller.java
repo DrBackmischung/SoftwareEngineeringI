@@ -3,6 +3,8 @@ package de.wwi2020seb.softwareengineering.gruppe7.gui;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import de.wwi2020seb.softwareengineering.gruppe7.application.VotingManager;
+
 public class Controller {
 	
 	private Model model;
@@ -11,6 +13,10 @@ public class Controller {
 	
 	private Controller() {
 		model = Model.getInstance();
+		/*
+		 * Aus dem Reader kommt eine ArrayList vom Typ ResultList zurueck
+		 */
+		model.readData(VotingManager.getData());
 	}
 
 	public static Controller getInstance() {
@@ -26,18 +32,26 @@ public class Controller {
 	}
 	
 	public void prepareData() {
+		loadData();
+		model.calculateCityResult();
+	}
+	
+	public void loadData() {
 		String district = view.getComboBoxContent();
 		if(!model.loadDistrict(district)) {
 			/*
 			 * Exception
 			 */
 		};
-		model.calculateCityResult();
+	}
+	
+	public void printData() {
+		view.printResultOfCity(model.getResultForCity());
+		view.printResultOfDistrict(model.getResultForDistrict());
 	}
 	
 	public void openGUI() {
-		view.printResultOfCity(model.getResultForCity());
-		view.printResultOfDistrict(model.getResultForDistrict());
+		printData();
 		view.setVisible(true);
 	}
 	
@@ -49,21 +63,14 @@ public class Controller {
 		return model;
 	}
 	
-	class ComboBoxListener implements ActionListener {
-
-		private View v;
-		private Model m;
+	public class ComboBoxListener implements ActionListener {
 		
-		public ComboBoxListener(View v, Model m) {
-			this.v = v;
-			this.m = m;
-		}
+		public ComboBoxListener() { }
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			
-			
-			
+			loadData();
+			printData();
 		}
 
 	}

@@ -31,4 +31,15 @@ public class VotingCalculator {
 		}
 	}
 	
+	public ArrayList<String> getAllNames(ArrayList<ResultList> results) {
+		ArrayList<String> names = new ArrayList<>();
+		for(ResultList r : results) {
+			for(ResultMap m : r.getResults()) {
+				if(!names.contains(m.getName()))
+					names.add(m.getName());
+			}
+		}
+		return names;
+	}
+	
 }

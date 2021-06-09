@@ -37,14 +37,7 @@ public class View extends JFrame {
 		comboBox = new JComboBox<String>();
 		comboBox.setBounds(268, 63, 140, 22);
 		contentPane.add(comboBox);
-		comboBox.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				/*
-				 * auslagern 
-				 */
-			}
-		});
+		comboBox.addActionListener(controller.new ComboBoxListener());
 	}
 	
 	public void printResultOfDistrict(ResultList result) {
