@@ -41,7 +41,7 @@ public class View extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				/*
-				 * auslagern
+				 * auslagern 
 				 */
 			}
 		});
