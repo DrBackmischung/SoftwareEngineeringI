@@ -1,5 +1,8 @@
 package de.wwi2020seb.softwareengineering.gruppe7.gui;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 public class Controller {
 	
 	private Model model;
@@ -38,6 +41,25 @@ public class Controller {
 	 
 	public Model getModel() {
 		return model;
+	}
+	
+	class ComboBoxListener implements ActionListener {
+
+		private View v;
+		private Model m;
+		
+		public ComboBoxListener(View v, Model m) {
+			this.v = v;
+			this.m = m;
+		}
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			
+			
+			
+		}
+
 	}
 
 }
