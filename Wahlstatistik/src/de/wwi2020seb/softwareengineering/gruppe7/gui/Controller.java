@@ -26,12 +26,18 @@ public class Controller {
 	}
 	
 	public void prepareData() {
-		/*
-		 * Hier die Berechnung machen
-		 */
+		String district = view.getComboBoxContent();
+		if(!model.loadDistrict(district)) {
+			/*
+			 * Exception
+			 */
+		};
+		model.calculateCityResult();
 	}
 	
 	public void openGUI() {
+		view.printResultOfCity(model.getResultForCity());
+		view.printResultOfDistrict(model.getResultForDistrict());
 		view.setVisible(true);
 	}
 	

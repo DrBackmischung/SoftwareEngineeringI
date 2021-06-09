@@ -54,4 +54,9 @@ public class View extends JFrame {
 	public void printResultOfCity(ResultList result) {
 		
 	}
+	
+	public String getComboBoxContent() {
+		return (String) comboBox.getSelectedItem();
+	}
+	
 }

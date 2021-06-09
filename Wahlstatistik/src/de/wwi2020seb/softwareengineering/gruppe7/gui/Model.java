@@ -9,6 +9,7 @@ public class Model {
 	public static Model model;
 	private static ArrayList<ResultList> results;
 	private ResultList cityResult;
+	private ResultList currentDistrictResult = null;
 
 	public static Model getInstance() {
 		if(model == null) {
@@ -21,16 +22,32 @@ public class Model {
 		results = new ArrayList<>();
 	}
 	
-	public ResultList getResultForDistrict(String name) {
-		for(ResultList d : results) {
-			if(d.getName().equalsIgnoreCase(name))
-				return d;
-		}
-		return null;
+	public ResultList getResultForDistrict() {
+		if(currentDistrictResult != null)
+			return currentDistrictResult;
+		else
+			/*
+			 * Hier Exception einfügen
+			 */
+			return null;
 	}
 	
 	public ResultList getResultForCity() {
 		return cityResult;
+	}
+	
+	public void calculateCityResult() {
+		
+	}
+	
+	public boolean loadDistrict(String name) {
+		for(ResultList d : results) {
+			if(d.getName().equalsIgnoreCase(name)) {
+				currentDistrictResult = d;
+				return true;
+			}
+		}
+		return false;
 	}
 
 }
