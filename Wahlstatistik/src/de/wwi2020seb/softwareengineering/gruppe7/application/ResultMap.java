@@ -24,4 +24,8 @@ public class ResultMap {
 		this.percentage = p;
 	}
 	
+	public double getPercentage() {
+		return percentage;
+	}
+	
 }

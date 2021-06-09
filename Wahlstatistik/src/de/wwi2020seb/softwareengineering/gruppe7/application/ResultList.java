@@ -2,12 +2,12 @@ package de.wwi2020seb.softwareengineering.gruppe7.application;
 
 import java.util.ArrayList;
 
-public class DistrictResultList {
+public class ResultList {
 	
 	private String districtName;
 	private ArrayList<ResultMap> results;
 	
-	public DistrictResultList(String name) {
+	public ResultList(String name) {
 		this.districtName = name;
 		results = new ArrayList<>();
 	}
