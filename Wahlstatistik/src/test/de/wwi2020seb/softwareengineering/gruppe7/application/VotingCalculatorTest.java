@@ -35,7 +35,7 @@ class VotingCalculatorTest {
 
 	@Test
 	@DisplayName("Test for percentage calculation")
-	void test() {
+	void testPercentageCalculation() {
 		ResultList r = new ResultList("Test");
 		ResultMap rm = new ResultMap("Relaxo", 100);
 		r.addResult(rm);
