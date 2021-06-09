@@ -5,11 +5,11 @@ public class VotingCalculator {
  * Bekommt alle DistrictResultLists und fügt alle fehlenden Personen hinzu
  */
 	
-	public void enrichCandidates(DistrictResultList d, String[] name) {
+	public void enrichCandidates(ResultList d, String[] name) {
 		
 	}
 	
-	public void calculatePercentages(DistrictResultList d) {
+	public void calculatePercentages(ResultList d) {
 		
 	}
 	
