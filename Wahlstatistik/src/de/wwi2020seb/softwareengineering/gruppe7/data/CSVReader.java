@@ -27,7 +27,7 @@ public class CSVReader {
 
 		try {
 			for(File path : fileArray) {
-				
+				System.out.println(path.getName());
 				br = new BufferedReader(new FileReader(path));
 				while( (line = br.readLine()) != null) {
 					values = line.split(";");
