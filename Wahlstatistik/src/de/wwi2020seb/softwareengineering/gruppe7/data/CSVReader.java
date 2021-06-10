@@ -15,7 +15,7 @@ public class CSVReader {
 		String paths[] = new String[2];
 		String line;
 		String values[];
-		ArrayList<String> personenList = new ArrayList<>();
+//		ArrayList<String> personenList = new ArrayList<>();
 		
 //Alle CSV Dateien eintragen. Bessere Lösung?
 		paths[0]  = "C:\\Users\\marce\\Desktop\\Niederfeld.csv";
@@ -27,16 +27,17 @@ public class CSVReader {
 				br = new BufferedReader(new FileReader(path));
 				while( (line = br.readLine()) != null) {
 					values = line.split(";");
-					personenList.add(values[0]);
+//					personenList.add(values[0]);
+					System.out.println(values[0] + " hat " + values[1] + " Stimmen");
 				}
 			
-			Iterator personenIterator = personenList.iterator();
-			while(personenIterator.hasNext()) {
-				String person = (String) personenIterator.next();
-				System.out.println(person);
-			}
+//			Iterator personenIterator = personenList.iterator();
+//			while(personenIterator.hasNext()) {
+//				String person = (String) personenIterator.next();
+//				System.out.println(person);
+//			}
 			System.out.println("Finish");
-			personenList = new ArrayList<>();
+//			personenList = new ArrayList<>();
 			}
 			
 		} catch (FileNotFoundException e) {
