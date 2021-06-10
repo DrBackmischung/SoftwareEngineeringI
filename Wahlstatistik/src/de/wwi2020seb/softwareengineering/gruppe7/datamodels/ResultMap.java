@@ -1,4 +1,4 @@
-package de.wwi2020seb.softwareengineering.gruppe7.application;
+package de.wwi2020seb.softwareengineering.gruppe7.datamodels;
 
 @SuppressWarnings("rawtypes")
 public class ResultMap implements Comparable {

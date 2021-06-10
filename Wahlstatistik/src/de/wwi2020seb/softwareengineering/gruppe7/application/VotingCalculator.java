@@ -2,6 +2,9 @@ package de.wwi2020seb.softwareengineering.gruppe7.application;
 
 import java.util.ArrayList;
 
+import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultList;
+import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultMap;
+
 public class VotingCalculator {
 /*
  * Bekommt alle DistrictResultLists und fuegt alle fehlenden Personen hinzu

@@ -2,8 +2,8 @@ package de.wwi2020seb.softwareengineering.gruppe7.gui;
 
 import java.util.ArrayList;
 
-import de.wwi2020seb.softwareengineering.gruppe7.application.ResultList;
 import de.wwi2020seb.softwareengineering.gruppe7.application.VotingCalculator;
+import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultList;
 
 public class Model {
 	

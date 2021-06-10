@@ -71,9 +71,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="de.wwi2020seb.softwareengineering.gruppe7.application.ResultMap" 
+  <class id="8" language="java" name="de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultMap" 
     project="Wahlstatistik" 
-    file="/Wahlstatistik/src/de/wwi2020seb/softwareengineering/gruppe7/application/ResultMap.java" binary="false" 
+    file="/Wahlstatistik/src/de/wwi2020seb/softwareengineering/gruppe7/datamodels/ResultMap.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="225" width="241" x="41" y="1166"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -82,9 +82,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="de.wwi2020seb.softwareengineering.gruppe7.application.ResultList" 
+  <class id="9" language="java" name="de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultList" 
     project="Wahlstatistik" 
-    file="/Wahlstatistik/src/de/wwi2020seb/softwareengineering/gruppe7/application/ResultList.java" binary="false" 
+    file="/Wahlstatistik/src/de/wwi2020seb/softwareengineering/gruppe7/datamodels/ResultList.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="171" width="241" x="624" y="955"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -93,141 +93,141 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="10">    
-    <bendpoint x="612" y="780"/>    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="11" name="currentDistrictResult">        
-        <position height="0" width="0" x="-194" y="-211"/>      
-      </attribute>      
-      <multiplicity id="12" minimum="0" maximum="1">        
-        <position height="0" width="0" x="-194" y="-211"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="13">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="9"/>  
-  </dependency>  
-  <association id="14">    
-    <bendpoint x="654" y="780"/>    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="15" name="results">        
-        <position height="18" width="41" x="792" y="395"/>      
-      </attribute>      
-      <multiplicity id="16" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="192" y="-199"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="17">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="1"/>  
-  </dependency>  
-  <dependency id="18">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="9"/>  
-  </dependency>  
-  <dependency id="19">    
+  <dependency id="10">    
     <bendpoint x="685" y="541"/>    
     <bendpoint x="685" y="780"/>    
     <end type="SOURCE" refId="1"/>    
     <end type="TARGET" refId="9"/>  
   </dependency>  
-  <dependency id="20">    
-    <bendpoint x="706" y="266"/>    
-    <bendpoint x="706" y="541"/>    
-    <bendpoint x="706" y="780"/>    
-    <end type="SOURCE" refId="3"/>    
+  <dependency id="11">    
+    <end type="SOURCE" refId="6"/>    
     <end type="TARGET" refId="9"/>  
   </dependency>  
-  <association id="21">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="22" name="view">        
-        <position height="0" width="0" x="1118" y="420"/>      
-      </attribute>      
-      <multiplicity id="23" minimum="0" maximum="1">        
-        <position height="0" width="0" x="1118" y="420"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="24">    
-    <bendpoint x="633" y="780"/>    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="25" name="cityResult">        
-        <position height="18" width="55" x="775" y="431"/>      
-      </attribute>      
-      <multiplicity id="26" minimum="0" maximum="1">        
-        <position height="0" width="0" x="192" y="-199"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="27">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="28" name="controller">        
-        <position height="0" width="0" x="486" y="-240"/>      
-      </attribute>      
-      <multiplicity id="29" minimum="0" maximum="1">        
-        <position height="0" width="0" x="486" y="-240"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="30">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="31" name="vc">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="32" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="33">    
+  <dependency id="12">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <association id="13">    
     <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="34" name="results">        
+      <attribute id="14" name="results">        
         <position height="0" width="0" x="-139" y="92"/>      
       </attribute>      
-      <multiplicity id="35" minimum="0" maximum="2147483647">        
+      <multiplicity id="15" minimum="0" maximum="2147483647">        
         <position height="0" width="0" x="-139" y="92"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="36">    
+  <dependency id="16">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="17">    
+    <bendpoint x="706" y="266"/>    
+    <bendpoint x="706" y="541"/>    
+    <bendpoint x="706" y="780"/>    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <association id="18">    
+    <bendpoint x="612" y="780"/>    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="37" name="model">        
+      <attribute id="19" name="currentDistrictResult">        
+        <position height="0" width="0" x="-194" y="-211"/>      
+      </attribute>      
+      <multiplicity id="20" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-194" y="-211"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="21">    
+    <bendpoint x="654" y="780"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="22" name="results">        
+        <position height="18" width="41" x="792" y="395"/>      
+      </attribute>      
+      <multiplicity id="23" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="192" y="-199"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="24">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="25" name="model">        
         <position height="0" width="0" x="-341" y="80"/>      
       </attribute>      
-      <multiplicity id="38" minimum="0" maximum="1">        
+      <multiplicity id="26" minimum="0" maximum="1">        
         <position height="0" width="0" x="-341" y="80"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="39">    
-    <end type="SOURCE" refId="3"/>    
+  <association id="27">    
+    <bendpoint x="633" y="780"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="28" name="cityResult">        
+        <position height="18" width="55" x="775" y="431"/>      
+      </attribute>      
+      <multiplicity id="29" minimum="0" maximum="1">        
+        <position height="0" width="0" x="192" y="-199"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="30">    
+    <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="1"/>  
   </dependency>  
-  <dependency id="40">    
+  <association id="31">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="32" name="controller">        
+        <position height="0" width="0" x="486" y="-240"/>      
+      </attribute>      
+      <multiplicity id="33" minimum="0" maximum="1">        
+        <position height="0" width="0" x="486" y="-240"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="34">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="35" name="vc">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="36" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="37">    
     <bendpoint x="50" y="955"/>    
     <end type="SOURCE" refId="7"/>    
     <end type="TARGET" refId="8"/>  
   </dependency>  
-  <association id="41">    
+  <association id="38">    
     <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="39" name="view">        
+        <position height="0" width="0" x="1118" y="420"/>      
+      </attribute>      
+      <multiplicity id="40" minimum="0" maximum="1">        
+        <position height="0" width="0" x="1118" y="420"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="41">    
+    <end type="SOURCE" refId="2" navigable="false">      
       <attribute id="42" name="model">        
         <position height="0" width="0" x="-341" y="80"/>      
       </attribute>      

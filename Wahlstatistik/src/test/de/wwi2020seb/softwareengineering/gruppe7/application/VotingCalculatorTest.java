@@ -9,9 +9,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import de.wwi2020seb.softwareengineering.gruppe7.application.ResultList;
-import de.wwi2020seb.softwareengineering.gruppe7.application.ResultMap;
 import de.wwi2020seb.softwareengineering.gruppe7.application.VotingCalculator;
+import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultList;
+import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultMap;
 
 class VotingCalculatorTest {
 	
