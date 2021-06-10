@@ -4,11 +4,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.border.BevelBorder;
-import javax.swing.JComboBox;
+
+import de.wwi2020seb.softwareengineering.gruppe7.application.ResultList;
 
 public class View extends JFrame {
 
@@ -24,32 +26,30 @@ public class View extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setBounds(10, 11, 89, 23);
-		contentPane.add(btnNewButton);
+		JButton lo_button = new JButton("New button");
+		lo_button.setBounds(10, 11, 89, 23);
+		contentPane.add(lo_button);
 		
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("New radio button");
 		rdbtnNewRadioButton.setBounds(6, 41, 109, 23);
 		contentPane.add(rdbtnNewRadioButton);
 		
 		comboBox = new JComboBox<String>();
-		comboBox.setBounds(179, 77, 140, 22);
+		comboBox.setBounds(268, 63, 140, 22);
 		contentPane.add(comboBox);
-		comboBox.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				/*
-				 * auslagern
-				 */
-			}
-		});
+		comboBox.addActionListener(controller.new ComboBoxListener());
 	}
 	
-	public void printResultOfDistrict() {
+	public void printResultOfDistrict(ResultList result) {
 		
 	}
 	
-	public void printResultOfCity() {
+	public void printResultOfCity(ResultList result) {
 		
 	}
+	
+	public String getComboBoxContent() {
+		return (String) comboBox.getSelectedItem();
+	}
+	
 }

@@ -3,12 +3,15 @@ package de.wwi2020seb.softwareengineering.gruppe7.gui;
 import java.util.ArrayList;
 
 import de.wwi2020seb.softwareengineering.gruppe7.application.ResultList;
+import de.wwi2020seb.softwareengineering.gruppe7.application.VotingCalculator;
 
 public class Model {
 	
 	public static Model model;
-	private static ArrayList<ResultList> results;
+	private ArrayList<ResultList> results;
 	private ResultList cityResult;
+	private ResultList currentDistrictResult = null;
+	private VotingCalculator vc = new VotingCalculator();
 
 	public static Model getInstance() {
 		if(model == null) {
@@ -21,16 +24,43 @@ public class Model {
 		results = new ArrayList<>();
 	}
 	
-	public ResultList getResultForDistrict(String name) {
-		for(ResultList d : results) {
-			if(d.getName().equalsIgnoreCase(name))
-				return d;
-		}
-		return null;
+	public ResultList getResultForDistrict() {
+		if(currentDistrictResult != null)
+			return currentDistrictResult;
+		else
+			/*
+			 * Hier Exception einfuegen
+			 */
+			return null;
 	}
 	
 	public ResultList getResultForCity() {
 		return cityResult;
+	}
+	
+	public void calculateCityResult() {
+		
+	}
+	
+	public boolean loadDistrict(String name) {
+		for(ResultList d : results) {
+			if(d.getName().equalsIgnoreCase(name)) {
+				currentDistrictResult = d;
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public void readData(ArrayList<ResultList> data) {
+		
+		this.results = data;
+		ArrayList<String> names = vc.getAllNames(this.results);
+		for(ResultList r : this.results) {
+			vc.calculatePercentages(r);
+			vc.enrichCandidates(r, names);
+		}
+		
 	}
 
 }

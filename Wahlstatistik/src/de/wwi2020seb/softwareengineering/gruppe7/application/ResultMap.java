@@ -1,6 +1,7 @@
 package de.wwi2020seb.softwareengineering.gruppe7.application;
 
-public class ResultMap {
+@SuppressWarnings("rawtypes")
+public class ResultMap implements Comparable {
 	
 	private String name;
 	private int votes;
@@ -26,6 +27,14 @@ public class ResultMap {
 	
 	public double getPercentage() {
 		return percentage;
+	}
+
+	/*
+	 * Automatische Sortierung nach Stimmenanzahl
+	 */
+	@Override
+	public int compareTo(Object o) {
+		return this.getVoteCount() - ((ResultMap) o).getVoteCount();
 	}
 	
 }

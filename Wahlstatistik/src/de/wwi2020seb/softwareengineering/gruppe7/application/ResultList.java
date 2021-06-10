@@ -1,15 +1,18 @@
 package de.wwi2020seb.softwareengineering.gruppe7.application;
 
-import java.util.ArrayList;
+import java.io.Serializable;
+import java.util.Set;
+import java.util.TreeSet;
 
-public class ResultList {
+public class ResultList implements Serializable {
 	
+	private static final long serialVersionUID = 6769684837926322L;
 	private String districtName;
-	private ArrayList<ResultMap> results;
+	private Set<ResultMap> results;
 	
 	public ResultList(String name) {
 		this.districtName = name;
-		results = new ArrayList<>();
+		results = new TreeSet<>();
 	}
 	
 	public String getName() {
@@ -18,6 +21,10 @@ public class ResultList {
 	
 	public void addResult(ResultMap r) {
 		results.add(r);
+	}
+	
+	public Set<ResultMap> getResults() {
+		return results;
 	}
 
 }
