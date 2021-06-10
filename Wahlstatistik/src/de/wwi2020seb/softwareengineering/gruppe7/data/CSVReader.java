@@ -1,6 +1,7 @@
 package de.wwi2020seb.softwareengineering.gruppe7.data;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -11,18 +12,21 @@ public class CSVReader {
 
 	public static void main(String[] args) {
 		
+		File f = new File("C:\\Users\\marce\\Desktop\\Wahlen");
+		File fileArray[] = f.listFiles();
+		
 		BufferedReader br; 
 		String paths[] = new String[2];
 		String line;
 		String values[];
 //		ArrayList<String> personenList = new ArrayList<>();
 		
-//Alle CSV Dateien eintragen. Bessere Lösung?
-		paths[0]  = "C:\\Users\\marce\\Desktop\\Niederfeld.csv";
-		paths[1]  = "C:\\Users\\marce\\Desktop\\Jungbusch.csv";
+////Alle CSV Dateien eintragen. Bessere Lösung?
+//		paths[0]  = "C:\\Users\\marce\\Desktop\\Niederfeld.csv";
+//		paths[1]  = "C:\\Users\\marce\\Desktop\\Jungbusch.csv";
 
 		try {
-			for(String path : paths) {
+			for(File path : fileArray) {
 				
 				br = new BufferedReader(new FileReader(path));
 				while( (line = br.readLine()) != null) {
