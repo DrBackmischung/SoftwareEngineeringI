@@ -21,6 +21,10 @@ public class ResultMap implements Comparable {
 		return votes;
 	}
 	
+	public void addVotes(int i) {
+		votes += i;
+	}
+	
 	public void setPercentage(double p) {
 		this.percentage = p;
 	}
