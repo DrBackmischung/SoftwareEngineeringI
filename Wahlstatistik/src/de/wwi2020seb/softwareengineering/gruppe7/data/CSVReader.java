@@ -7,41 +7,84 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Set;
+
+import de.wwi2020seb.softwareengineering.gruppe7.application.ResultList;
+import de.wwi2020seb.softwareengineering.gruppe7.application.ResultMap;
 
 public class CSVReader {
+	
+	private BufferedReader br;
+	private String line;
+	private String values[];
+	private ArrayList<ResultList> AllResultLists;
+	private String districtName;
+	private File f;
+	private File fileArray[];
+	
+	public ArrayList<ResultList> getData() {
+		
+//		f = new File("C:\\Users\\marce\\Desktop\\Wahlen");
+//		fileArray[] = f.listFiles();
+		f = new File("C:\\Users\\Marcel\\Desktop\\Wahlen");
+		fileArray = f.listFiles();
+		
+		AllResultLists = new ArrayList<>();
+		try {
+			for(File path : fileArray) {
+				values 		 = path.getName().split(".csv");
+				districtName = values[0];
+				ResultList currentDistrict = new ResultList(districtName);
+				br = new BufferedReader(new FileReader(path));
+				
+				while( (line = br.readLine()) != null) {
+					values    = line.split(";");
+				    ResultMap currentResultMap = new ResultMap(values[0], Integer.parseInt(values[1]));
+				    currentDistrict.addResult(currentResultMap);
+				}
+			
+				AllResultLists.add(currentDistrict);
+				}
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			System.out.println("Dateipfad nicht gefunden. Bitte wählen sie einen gültigen aus");
+		}  catch (IOException e) {
+			e.printStackTrace();
+			System.out.println("Probleme beim lesen der Datei. Stellen sie sicher, dass nur CSV Dateien gelesen werden");
+		}
+		
+		return AllResultLists;
+		
+				}
 
 	public static void main(String[] args) {
 		
-		File f = new File("C:\\Users\\marce\\Desktop\\Wahlen");
+//		File f = new File("C:\\Users\\marce\\Desktop\\Wahlen");
+//		File fileArray[] = f.listFiles();
+		File f = new File("C:\\Users\\Marcel\\Desktop\\Wahlen");
 		File fileArray[] = f.listFiles();
 		
-		BufferedReader br; 
-		String paths[] = new String[2];
+		BufferedReader br;
 		String line;
 		String values[];
-//		ArrayList<String> personenList = new ArrayList<>();
-		
-////Alle CSV Dateien eintragen. Bessere Lösung?
-//		paths[0]  = "C:\\Users\\marce\\Desktop\\Niederfeld.csv";
-//		paths[1]  = "C:\\Users\\marce\\Desktop\\Jungbusch.csv";
+		ArrayList<ResultList> AllResultLists = new ArrayList<>();
+		String districtName;
 
 		try {
 			for(File path : fileArray) {
-				System.out.println(path.getName());
+				values 		 = path.getName().split(".csv");
+				districtName = values[0];
+				ResultList currentDistrict = new ResultList(districtName);
 				br = new BufferedReader(new FileReader(path));
+				
 				while( (line = br.readLine()) != null) {
-					values = line.split(";");
-//					personenList.add(values[0]);
-					System.out.println(values[0] + " hat " + values[1] + " Stimmen");
+					values    = line.split(";");
+				    ResultMap currentResultMap = new ResultMap(values[0], Integer.parseInt(values[1]));
+				    currentDistrict.addResult(currentResultMap);
 				}
 			
-//			Iterator personenIterator = personenList.iterator();
-//			while(personenIterator.hasNext()) {
-//				String person = (String) personenIterator.next();
-//				System.out.println(person);
-//			}
-			System.out.println("Finish");
-//			personenList = new ArrayList<>();
+				AllResultLists.add(currentDistrict);
 			}
 			
 		} catch (FileNotFoundException e) {
@@ -49,6 +92,19 @@ public class CSVReader {
 		}  catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		Iterator testIterator = AllResultLists.iterator();
+		while(testIterator.hasNext()) {
+			ResultList nextResultList = (ResultList)testIterator.next();
+			System.out.println("Bezirk: " + nextResultList.getName());
+			Set resultMaps = nextResultList.getResults();
+			Iterator setIterator = resultMaps.iterator();
+				while(setIterator.hasNext()) {
+					ResultMap currentResultMap = (ResultMap)setIterator.next();
+					System.out.println(currentResultMap.getName() + " hat " + currentResultMap.getVoteCount() + " Stimmen.");
+				}
+		}
+		
 
 	}
 }
