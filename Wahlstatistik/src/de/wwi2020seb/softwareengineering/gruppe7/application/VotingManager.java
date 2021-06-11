@@ -2,7 +2,6 @@ package de.wwi2020seb.softwareengineering.gruppe7.application;
 
 import java.util.ArrayList;
 
-import de.wwi2020seb.softwareengineering.gruppe7.data.JSONConverter;
 import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultList;
 import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultMap;
 
@@ -11,15 +10,17 @@ public class VotingManager {
 	private static VotingManager vm;
 
 	public ArrayList<ResultList> getData() {
-		ArrayList<ResultList> results = JSONConverter.getData();
-		VotingCalculator vc = this.new VotingCalculator();
-		ArrayList<String> names = vc.getAllNames(results);
-		for(ResultList r : results) {
-			vc.calculatePercentages(r);
-			vc.enrichCandidates(r, names);
-		}
-		results.add(vc.calculateCityResult(results));
-		return results;
+//		ArrayList<ResultList> results;
+//		results = JSONConverter.getData();
+//		VotingCalculator vc = this.new VotingCalculator();
+//		ArrayList<String> names = vc.getAllNames(results);
+//		for(ResultList r : results) {
+//			vc.calculatePercentages(r);
+//			vc.enrichCandidates(r, names);
+//		}
+//		results.add(vc.calculateCityResult(results));
+//		return results;
+		return null;
 	}
 	
 	public static VotingManager getInstance() {
