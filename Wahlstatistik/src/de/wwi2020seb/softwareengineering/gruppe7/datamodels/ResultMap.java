@@ -1,7 +1,9 @@
 package de.wwi2020seb.softwareengineering.gruppe7.datamodels;
 
 @SuppressWarnings("rawtypes")
-public class ResultMap implements Comparable {
+public class ResultMap 
+//implements Comparable 
+{
 	
 	private String name;
 	private int votes;
@@ -36,9 +38,9 @@ public class ResultMap implements Comparable {
 	/*
 	 * Automatische Sortierung nach Stimmenanzahl
 	 */
-	@Override
-	public int compareTo(Object o) {
-		return this.getVoteCount() - ((ResultMap) o).getVoteCount();
-	}
+//	@Override
+//	public int compareTo(Object o) {
+//		return this.getVoteCount() - ((ResultMap) o).getVoteCount();
+//	}
 	
 }
