@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.border.BevelBorder;
 
-import de.wwi2020seb.softwareengineering.gruppe7.application.ResultList;
+import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultList;
 
 public class View extends JFrame {
 

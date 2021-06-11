@@ -2,8 +2,11 @@ package de.wwi2020seb.softwareengineering.gruppe7.gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import de.wwi2020seb.softwareengineering.gruppe7.application.VotingManager;
+import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultList;
+import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultMap;
 
 public class Controller {
 	
@@ -16,7 +19,7 @@ public class Controller {
 		/*
 		 * Aus dem Reader kommt eine ArrayList vom Typ ResultList zurueck
 		 */
-		model.readData(VotingManager.getData());
+		model.readData(VotingManager.getInstance().getData());
 	}
 
 	public static Controller getInstance() {
@@ -28,26 +31,30 @@ public class Controller {
 	
 	public void startApplication() {
 		view = new View(this);
-		prepareData(); 
-	}
-	
-	public void prepareData() {
 		loadData();
-		model.calculateCityResult();
 	}
 	
 	public void loadData() {
-		String district = view.getComboBoxContent();
+//		String district = view.getComboBoxContent();
+		String district = "Jungbusch";
 		if(!model.loadDistrict(district)) {
-			/*
-			 * Exception
-			 */
+			System.out.println("Distrikt "+district+" nicht gefunden.");
 		};
 	}
 	
 	public void printData() {
-		view.printResultOfCity(model.getResultForCity());
-		view.printResultOfDistrict(model.getResultForDistrict());
+		ResultList r = model.getResultForDistrict();
+		System.out.println("Distrikt: "+r.getName());
+		for(ResultMap m : r.getResults()) {
+			System.out.println(m.getName()+" hat "+m.getVoteCount()+" ("+m.getPercentage()+") Stimmen");
+		}
+		ResultList r2 = model.getResultForCity();
+		System.out.println("Gesamt: "+r2.getName());
+		for(ResultMap m : r2.getResults()) {
+			System.out.println(m.getName()+" hat "+m.getVoteCount()+" ("+m.getPercentage()+") Stimmen");
+		}
+//		view.printResultOfCity(model.getResultForCity());
+//		view.printResultOfDistrict(model.getResultForDistrict());
 	}
 	
 	public void openGUI() {

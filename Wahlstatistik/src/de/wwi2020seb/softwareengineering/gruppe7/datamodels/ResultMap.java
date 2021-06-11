@@ -1,4 +1,4 @@
-package de.wwi2020seb.softwareengineering.gruppe7.application;
+package de.wwi2020seb.softwareengineering.gruppe7.datamodels;
 
 @SuppressWarnings("rawtypes")
 public class ResultMap implements Comparable {
@@ -19,6 +19,10 @@ public class ResultMap implements Comparable {
 	
 	public int getVoteCount() {
 		return votes;
+	}
+	
+	public void addVotes(int i) {
+		votes += i;
 	}
 	
 	public void setPercentage(double p) {

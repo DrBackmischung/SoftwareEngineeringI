@@ -2,16 +2,13 @@ package de.wwi2020seb.softwareengineering.gruppe7.gui;
 
 import java.util.ArrayList;
 
-import de.wwi2020seb.softwareengineering.gruppe7.application.ResultList;
-import de.wwi2020seb.softwareengineering.gruppe7.application.VotingCalculator;
+import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultList;
 
 public class Model {
 	
 	public static Model model;
 	private ArrayList<ResultList> results;
-	private ResultList cityResult;
 	private ResultList currentDistrictResult = null;
-	private VotingCalculator vc = new VotingCalculator();
 
 	public static Model getInstance() {
 		if(model == null) {
@@ -35,11 +32,12 @@ public class Model {
 	}
 	
 	public ResultList getResultForCity() {
-		return cityResult;
-	}
-	
-	public void calculateCityResult() {
-		
+		for(ResultList r : results) {
+			if(r.getName().equals("---Gesamt---")) {
+				return r;
+			}
+		}
+		return null;
 	}
 	
 	public boolean loadDistrict(String name) {
@@ -54,12 +52,7 @@ public class Model {
 
 	public void readData(ArrayList<ResultList> data) {
 		
-		this.results = data;
-		ArrayList<String> names = vc.getAllNames(this.results);
-		for(ResultList r : this.results) {
-			vc.calculatePercentages(r);
-			vc.enrichCandidates(r, names);
-		}
+		results = data;
 		
 	}
 
