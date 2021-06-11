@@ -20,13 +20,10 @@ public class CSVReader {
 	private File f;
 	private File fileArray[];
 	
-	public ArrayList<ResultList> getData() {
+	public ArrayList<ResultList> getData(String filePath) {
 		
-//		f = new File("C:\\Users\\marce\\Desktop\\Wahlen");
-//		fileArray[] = f.listFiles();
-		f = new File("C:\\Users\\Marcel\\Desktop\\Wahlen");
+		f = new File(filePath);
 		fileArray = f.listFiles();
-		
 		
 		AllResultLists = new ArrayList<>();
 		try {
