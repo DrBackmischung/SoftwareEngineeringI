@@ -65,7 +65,7 @@ public class CSVReader {
 			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-			System.out.println("Dateipfad nicht gefunden. Bitte wählen sie einen gueltigen aus");
+			System.out.println("Dateipfad nicht gefunden. Bitte waehlen sie einen gueltigen aus");
 		}  catch (IOException e) {
 			e.printStackTrace();
 			System.out.println("Probleme beim lesen der Datei. Stellen sie sicher, dass nur CSV Dateien gelesen werden");

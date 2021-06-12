@@ -17,8 +17,8 @@ public class View extends JFrame {
 	@SuppressWarnings("unused")
 	private Controller c;
 	private JComboBox<String> districtComboBox;
-	List cityResultList;
-	List districtResultList;
+	private List cityResultList;
+	private List districtResultList;
 	
 	public View(Controller c) {
 		
