@@ -14,7 +14,7 @@ public class ControllerTest {
 	@DisplayName("Test Singelton")
 	public void testSingelton(){
 	 	Controller firstController = Controller.getInstance();
-	 	Controller secondController = Controller.getInstance();
+	 	Controller secondController = Controller.getInstance(); 
 	 	assertEquals(firstController, secondController);
 	}
 	

@@ -17,7 +17,7 @@ public class CSVReaderTest {
 	CSVReader testReader = CSVReader.getInstance();
 	ArrayList<ResultList> resultLists = new ArrayList<ResultList>();
 	ArrayList<ResultList> expected = new ArrayList<ResultList>();
-@Test
+	@Test
 	@DisplayName("CSV Reader Test")
 	public void testCSVReader() {
 	
