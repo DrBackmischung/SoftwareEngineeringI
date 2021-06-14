@@ -7,7 +7,6 @@ import javax.swing.JFileChooser;
 
 import de.wwi2020seb.softwareengineering.gruppe7.application.VotingManager;
 import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultList;
-import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultMap;
 
 public class Controller {
 	
@@ -29,8 +28,6 @@ public class Controller {
 	
 	public void startApplication() {
 		view = new View(this);
-		view.loadComboBoxContent(model.getDistrictNames());
-		loadData();
 	}
 	
 	public void loadData() {
@@ -43,22 +40,12 @@ public class Controller {
 	public void printData() {
 		ResultList r = model.getResultForDistrict();
 		if(r != null) {
-//			System.out.println("Distrikt: "+r.getName());
-//			for(ResultMap m : r.getResults()) {
-//				System.out.println(m.getName()+" hat "+m.getVoteCount()+" ("+m.getPercentage()+") Stimmen");
-//			}
 			view.printResultOfDistrict(model.getResultForDistrict());
 		}
-		ResultList r2 = model.getResultForCity();
-//		System.out.println("Gesamt: "+r2.getName());
-//		for(ResultMap m : r2.getResults()) {
-//			System.out.println(m.getName()+" hat "+m.getVoteCount()+" ("+m.getPercentage()+") Stimmen");
-//		}
 		view.printResultOfCity(model.getResultForCity());
 	}
 	
 	public void openGUI() {
-		printData();
 		view.setVisible(true);
 	}
 	
@@ -70,11 +57,6 @@ public class Controller {
 		return model;
 	}
 	
-	public void updateData(String dateipfad) {
-		
-		model.readData(VotingManager.getInstance().getData(dateipfad));
-		startApplication();
-	}
 	
 	public class ComboBoxListener implements ActionListener {
 		
@@ -87,21 +69,27 @@ public class Controller {
 		}
 	}
 	
-	   public class LoadDataListener implements ActionListener{
-		   
-		   public LoadDataListener() { }
+   public class LoadDataListener implements ActionListener{
+	   
+	   public LoadDataListener() { }
 
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			JFileChooser chooser = new JFileChooser();
-			int rueckgabeWert = chooser.showOpenDialog(null);
-			 if(rueckgabeWert == JFileChooser.APPROVE_OPTION){
-				 updateData(chooser.getSelectedFile().getName());  
-				 }
-			
-		}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		JFileChooser chooser = new JFileChooser();
+		chooser.setCurrentDirectory(new java.io.File("."));
+		chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+		chooser.setAcceptAllFileFilterUsed(false);
+		int rueckgabeWert = chooser.showOpenDialog(null);
+		 if(rueckgabeWert == JFileChooser.APPROVE_OPTION){
+			 model.readData(VotingManager.getInstance().getData(chooser.getSelectedFile().getAbsolutePath()));
+			 view.loadComboBoxContent(model.getDistrictNames());
+			 loadData();
+			 printData();
+			 }
+		
+	}
 
 		   
-	   }
+ }
 
 }

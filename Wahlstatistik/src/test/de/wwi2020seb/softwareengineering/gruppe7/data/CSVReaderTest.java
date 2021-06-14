@@ -39,7 +39,7 @@ public class CSVReaderTest {
 		expected.add(Jungbusch);
 		expected.add(Ketsch);
 			
-		resultLists =  testReader.getData();
+		resultLists =  testReader.getData("src/test/de/wwi2020seb/softwareengineering/gruppe7/votes/");
 		
 		Iterator<ResultList> firstExpected = expected.iterator();
 		Iterator<ResultList> firstResult = resultLists.iterator();

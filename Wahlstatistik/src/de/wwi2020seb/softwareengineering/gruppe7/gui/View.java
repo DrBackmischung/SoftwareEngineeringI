@@ -2,7 +2,6 @@ package de.wwi2020seb.softwareengineering.gruppe7.gui;
 
 import java.awt.Label;
 import java.awt.List;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.JComboBox;
@@ -28,7 +27,7 @@ public class View extends JFrame {
 		
 		this.setTitle("Wahlstatistik");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 485, 322);
+		setBounds(100, 100, 485, 399);
 		getContentPane().setLayout(null);
 		
 		cityResultList = new List();
@@ -36,7 +35,7 @@ public class View extends JFrame {
 		getContentPane().add(cityResultList);
 		
 		districtResultList = new List();
-		districtResultList.setBounds(241, 77, 220, 194);
+		districtResultList.setBounds(241, 77, 220, 198);
 		getContentPane().add(districtResultList);
 		
 		districtComboBox = new JComboBox<>();
@@ -53,7 +52,7 @@ public class View extends JFrame {
 		getContentPane().add(districtLabel);
 		
 		JButton btnNewButton = new JButton("Load Data");
-		btnNewButton.setBounds(334, 16, 89, 23);
+		btnNewButton.setBounds(10, 296, 220, 23);
 		btnNewButton.addActionListener(c.new LoadDataListener());
 		getContentPane().add(btnNewButton);
 	}
