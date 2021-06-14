@@ -1,4 +1,4 @@
-package test.de.wwi2020seb.softwareengineering.gruppe7.application;
+package test.de.wwi2020seb.softwareengineering.gruppe7.data;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
