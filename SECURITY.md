@@ -4,9 +4,10 @@
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 1.0     | :x:, not yet released   |
-| Beta Versions    | :x:, not yet released                |
-| Alpha Versions    | :white_check_mark:                |
+| 1.1     | :x:, not yet released   |
+| 1.0     | :white_check_mark:, released on 12.06.2021   |
+| Beta Versions    | :x:, not released to public                |
+| Alpha Versions    | :x:, not released to public                |
 
 ## Reporting a Vulnerability
 
