@@ -6,7 +6,6 @@ import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
 import de.wwi2020seb.softwareengineering.gruppe7.gui.Controller;
-import de.wwi2020seb.softwareengineering.gruppe7.gui.Model;
 
 public class ControllerTest {
 	
