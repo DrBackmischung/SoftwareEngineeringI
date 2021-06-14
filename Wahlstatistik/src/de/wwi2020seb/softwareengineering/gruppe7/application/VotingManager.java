@@ -9,19 +9,24 @@ import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultMap;
 public class VotingManager {
 	
 	private static VotingManager vm;
+	
+	public int readData(String dataPath) {
+		return CSVReader.getInstance().readData(dataPath);
+	}
 
 	public ArrayList<ResultList> getData() {
 		ArrayList<ResultList> results;
 		results = CSVReader.getInstance().getData();
-		VotingCalculator vc = this.new VotingCalculator();
-		ArrayList<String> names = vc.getAllNames(results);
-		for(ResultList r : results) {
-			vc.calculatePercentages(r);
-			vc.enrichCandidates(r, names);
+		if(results != null) {
+			VotingCalculator vc = this.new VotingCalculator();
+			ArrayList<String> names = vc.getAllNames(results);
+			for(ResultList r : results) {
+				vc.calculatePercentages(r);
+				vc.enrichCandidates(r, names);
+			}
+			results.add(vc.calculateCityResult(results));
 		}
-		results.add(vc.calculateCityResult(results));
 		return results;
-//		return null;
 	}
 	
 	public static VotingManager getInstance() {
@@ -31,7 +36,7 @@ public class VotingManager {
 		return vm;
 	}
 	
-	class VotingCalculator {
+	public class VotingCalculator {
 			
 		public void enrichCandidates(ResultList r, ArrayList<String> names) {
 			for(String s : names) {
@@ -83,15 +88,10 @@ public class VotingManager {
 		public ArrayList<String> getAllNames(ArrayList<ResultList> results) {
 			ArrayList<String> names = new ArrayList<>();
 			for(ResultList r : results) {
-//				System.out.println("==========="+r.getName());
 				for(ResultMap m : r.getResults()) {
-//					System.out.println("==="+m.getName());
 					if(!names.contains(m.getName()))
 						names.add(m.getName());
 				}
-			}
-			for(String s : names) {
-				System.out.println("="+s);
 			}
 			return names;
 		}

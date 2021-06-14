@@ -3,9 +3,10 @@ package de.wwi2020seb.softwareengineering.gruppe7.gui;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JFileChooser;
+
 import de.wwi2020seb.softwareengineering.gruppe7.application.VotingManager;
 import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultList;
-import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultMap;
 
 public class Controller {
 	
@@ -15,7 +16,6 @@ public class Controller {
 	
 	private Controller() {
 		model = Model.getInstance();
-		model.readData(VotingManager.getInstance().getData());
 	}
 
 	public static Controller getInstance() {
@@ -25,47 +25,50 @@ public class Controller {
 		return controller;
 	}
 	
+	public View getView() {
+		return view;
+	} 
+	 
+	public Model getModel() {
+		return model;
+	}
+	
 	public void startApplication() {
 		view = new View(this);
-		view.loadComboBoxContent(model.getDistrictNames());
-		loadData();
+	}
+	
+	public void openGUI() {
+		view.setVisible(true);
 	}
 	
 	public void loadData() {
 		String district = view.getComboBoxContent();
-		if(!model.loadDistrict(district)) {
-			System.out.println("Distrikt "+district+" nicht gefunden.");
+		if(district != null && !model.loadDistrict(district)) { 
+				view.printLog(("Distrikt "+district+" nicht gefunden."));
 		};
 	}
 	
 	public void printData() {
 		ResultList r = model.getResultForDistrict();
-		if(r != null) {
-//			System.out.println("Distrikt: "+r.getName());
-//			for(ResultMap m : r.getResults()) {
-//				System.out.println(m.getName()+" hat "+m.getVoteCount()+" ("+m.getPercentage()+") Stimmen");
-//			}
-			view.printResultOfDistrict(model.getResultForDistrict());
+		if(r != null)
+			view.printResultOfDistrict(r);
+		r = model.getResultForCity();
+		if(r != null)
+			view.printResultOfCity(model.getResultForCity());
+	}
+	
+	public void convertLogMessageFromReader(int msgID) {
+		switch (msgID) {
+		case 1:
+			view.printLog("Dateipfad konnte nicht gefunden werden!");
+			break;
+		case 2:
+			view.printLog("Pfad konnte vom Programm nicht geoeffnet werden!");
+			break;
+		case 3:
+			view.printLog("Im gewaehlten Dateipfad befinden sich keine Wahldaten!");
+			break;
 		}
-		ResultList r2 = model.getResultForCity();
-//		System.out.println("Gesamt: "+r2.getName());
-//		for(ResultMap m : r2.getResults()) {
-//			System.out.println(m.getName()+" hat "+m.getVoteCount()+" ("+m.getPercentage()+") Stimmen");
-//		}
-		view.printResultOfCity(model.getResultForCity());
-	}
-	
-	public void openGUI() {
-		printData();
-		view.setVisible(true);
-	}
-	
-	public View getView() {
-		return view;
-	}
-	 
-	public Model getModel() {
-		return model;
 	}
 	
 	public class ComboBoxListener implements ActionListener {
@@ -77,7 +80,30 @@ public class Controller {
 			loadData();
 			printData();
 		}
-
 	}
+	
+    public class LoadDataListener implements ActionListener {
+	   
+	   public LoadDataListener() { }
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			JFileChooser chooser = new JFileChooser();
+			chooser.setCurrentDirectory(new java.io.File("."));
+			chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+			chooser.setAcceptAllFileFilterUsed(false);
+			int rueckgabeWert = chooser.showOpenDialog(null);
+			if(rueckgabeWert == JFileChooser.APPROVE_OPTION){
+				view.printLog("Wahlverzeichnis geladen: '"+chooser.getSelectedFile().getName()+"'.");
+				convertLogMessageFromReader(VotingManager.getInstance().readData(chooser.getSelectedFile().getAbsolutePath()));
+				model.readData(VotingManager.getInstance().getData());
+				view.loadComboBoxContent(model.getDistrictNames());
+				loadData();
+				printData();
+			}
+		
+		}
+ 
+    }
 
 }

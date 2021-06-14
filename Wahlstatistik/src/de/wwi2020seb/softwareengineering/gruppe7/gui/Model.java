@@ -3,7 +3,6 @@ package de.wwi2020seb.softwareengineering.gruppe7.gui;
 import java.util.ArrayList;
 
 import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultList;
-import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultMap;
 
 public class Model {
 	
@@ -14,7 +13,7 @@ public class Model {
 	public static Model getInstance() {
 		if(model == null) {
 			model = new Model();
-		}
+		} 
 		return model;
 	}
 	
@@ -26,9 +25,6 @@ public class Model {
 		if(currentDistrictResult != null)
 			return currentDistrictResult;
 		else
-			/*
-			 * Hier Exception einfuegen
-			 */
 			return null;
 	}
 	
