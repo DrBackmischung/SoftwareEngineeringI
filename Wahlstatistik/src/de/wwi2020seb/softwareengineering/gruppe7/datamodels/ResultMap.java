@@ -13,6 +13,10 @@ public class ResultMap
 		this.votes = votes;
 		percentage = 0.0;
 	}
+	
+	public String toString() {
+		return name+"\t"+ "- "+votes+" Stimmen ("+percentage+"%)";
+	}
 
 	public String getName() {
 		return name;
