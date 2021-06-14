@@ -32,40 +32,38 @@ public class CSVReader {
 		return r;
 	}
 	
-	public ArrayList<ResultList> getData(String dataPath) {
+	public int readData(String dataPath) {
 		
 		f = new File(dataPath);
 		fileArray = f.listFiles();
 
-		
 		allResultLists = new ArrayList<>();
 		try {
 			for(File path : fileArray) {
-				values 		 = path.getName().split(".csv");
-				districtName = values[0];
-				ResultList currentDistrict = new ResultList(districtName);
-				br = new BufferedReader(new FileReader(path));
 				
-				while( (line = br.readLine()) != null) {
-					values    = line.split(";");
-				    ResultMap currentResultMap = new ResultMap(values[0], Integer.parseInt(values[1]));
-				    currentDistrict.addResult(currentResultMap);
-				    }
-			
-				allResultLists.add(currentDistrict);
+				if(path.getName().endsWith(".csv")) {
+					values = path.getName().split(".csv");
+					districtName = values[0];
+					ResultList currentDistrict = new ResultList(districtName);
+					br = new BufferedReader(new FileReader(path));
+					while( (line = br.readLine()) != null) {
+						values    = line.split(";");
+					    ResultMap currentResultMap = new ResultMap(values[0], Integer.parseInt(values[1]));
+					    currentDistrict.addResult(currentResultMap);
+					}
+				
+					allResultLists.add(currentDistrict);
+				}
+				
 			}
 			
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-			System.out.println("Dateipfad nicht gefunden. Bitte waehlen sie einen gueltigen aus");
+			System.out.println(1);
+			return 1;
 		}  catch (IOException e) {
-			e.printStackTrace();
-			System.out.println("Probleme beim lesen der Datei. Stellen sie sicher, dass nur CSV Dateien gelesen werden");
-		}
-			catch(Exception e) {
-				
-			}
-		finally {
+			System.out.println(2);
+			return 2;
+		} finally {
 			try {
 				br.close();
 			}
@@ -76,6 +74,18 @@ public class CSVReader {
 	
 			}
 		}
+		
+		if(allResultLists.size() == 0) {
+			System.out.println(3);
+			return 3;
+		}
+		
+		return 0;
+		
+	}
+	
+	public ArrayList<ResultList> getData() {
+		
 		return allResultLists;
 		
 	}

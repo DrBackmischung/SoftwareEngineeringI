@@ -25,9 +25,6 @@ public class Model {
 		if(currentDistrictResult != null)
 			return currentDistrictResult;
 		else
-			/*
-			 * Hier Exception einfuegen
-			 */
 			return null;
 	}
 	

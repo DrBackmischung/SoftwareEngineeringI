@@ -11,6 +11,8 @@ import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultComparator;
 import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultList;
 import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultMap;
 import javax.swing.JButton;
+import javax.swing.JSeparator;
+import javax.swing.JLabel;
 
 public class View extends JFrame {
 	
@@ -20,6 +22,7 @@ public class View extends JFrame {
 	private JComboBox<String> districtComboBox;
 	private List cityResultList;
 	private List districtResultList;
+	private JLabel exceptionLabel;
 	
 	public View(Controller c) {
 		
@@ -31,7 +34,7 @@ public class View extends JFrame {
 		getContentPane().setLayout(null);
 		
 		cityResultList = new List();
-		cityResultList.setBounds(10, 50, 220, 225);
+		cityResultList.setBounds(10, 77, 220, 198);
 		getContentPane().add(cityResultList);
 		
 		districtResultList = new List();
@@ -51,10 +54,18 @@ public class View extends JFrame {
 		districtLabel.setBounds(241, 23, 59, 21);
 		getContentPane().add(districtLabel);
 		
-		JButton btnNewButton = new JButton("Load Data");
-		btnNewButton.setBounds(10, 296, 220, 23);
-		btnNewButton.addActionListener(c.new LoadDataListener());
-		getContentPane().add(btnNewButton);
+		JButton loadResultDirectory = new JButton("Wahlverzeichnis oeffnen...");
+		loadResultDirectory.setBounds(10, 49, 220, 22);
+		loadResultDirectory.addActionListener(c.new LoadDataListener());
+		getContentPane().add(loadResultDirectory);
+		
+		JSeparator separator = new JSeparator();
+		separator.setBounds(10, 324, 449, 2);
+		getContentPane().add(separator);
+		
+		exceptionLabel = new JLabel(">> Bitte waehlen Sie ein Verzeichnis, in dem sich Wahlergebnisse befinden!");
+		exceptionLabel.setBounds(10, 335, 449, 14);
+		getContentPane().add(exceptionLabel);
 	}
 	
 	public void printResultOfDistrict(ResultList r) {
@@ -83,4 +94,9 @@ public class View extends JFrame {
 	public String getComboBoxContent() {
 		return (String) districtComboBox.getSelectedItem();
 	}
+	
+	public void printLog(String msg) {
+		exceptionLabel.setText(">> "+msg);
+	}
+	
 }

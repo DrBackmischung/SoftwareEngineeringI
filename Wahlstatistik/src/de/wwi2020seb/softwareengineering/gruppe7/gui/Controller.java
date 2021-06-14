@@ -16,7 +16,6 @@ public class Controller {
 	
 	private Controller() {
 		model = Model.getInstance();
-		model.readData(VotingManager.getInstance().getData(""));
 	}
 
 	public static Controller getInstance() {
@@ -24,29 +23,6 @@ public class Controller {
 			controller = new Controller();
 		}
 		return controller;
-	}
-	
-	public void startApplication() {
-		view = new View(this);
-	}
-	
-	public void loadData() {
-		String district = view.getComboBoxContent();
-		if(!model.loadDistrict(district)) {
-			System.out.println("Distrikt "+district+" nicht gefunden.");
-		};
-	}
-	
-	public void printData() {
-		ResultList r = model.getResultForDistrict();
-		if(r != null) {
-			view.printResultOfDistrict(model.getResultForDistrict());
-		}
-		view.printResultOfCity(model.getResultForCity());
-	}
-	
-	public void openGUI() {
-		view.setVisible(true);
 	}
 	
 	public View getView() {
@@ -57,6 +33,43 @@ public class Controller {
 		return model;
 	}
 	
+	public void startApplication() {
+		view = new View(this);
+	}
+	
+	public void openGUI() {
+		view.setVisible(true);
+	}
+	
+	public void loadData() {
+		String district = view.getComboBoxContent();
+		if(district != null && !model.loadDistrict(district)) { 
+				view.printLog(("Distrikt "+district+" nicht gefunden."));
+		};
+	}
+	
+	public void printData() {
+		ResultList r = model.getResultForDistrict();
+		if(r != null)
+			view.printResultOfDistrict(r);
+		r = model.getResultForCity();
+		if(r != null)
+			view.printResultOfCity(model.getResultForCity());
+	}
+	
+	public void convertLogMessageFromReader(int msgID) {
+		switch (msgID) {
+		case 1:
+			view.printLog("Dateipfad konnte nicht gefunden werden!");
+			break;
+		case 2:
+			view.printLog("Pfad konnte vom Programm nicht geoeffnet werden!");
+			break;
+		case 3:
+			view.printLog("Im gewaehlten Dateipfad befinden sich keine Wahldaten!");
+			break;
+		}
+	}
 	
 	public class ComboBoxListener implements ActionListener {
 		
@@ -69,27 +82,28 @@ public class Controller {
 		}
 	}
 	
-   public class LoadDataListener implements ActionListener{
+    public class LoadDataListener implements ActionListener {
 	   
 	   public LoadDataListener() { }
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		JFileChooser chooser = new JFileChooser();
-		chooser.setCurrentDirectory(new java.io.File("."));
-		chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-		chooser.setAcceptAllFileFilterUsed(false);
-		int rueckgabeWert = chooser.showOpenDialog(null);
-		 if(rueckgabeWert == JFileChooser.APPROVE_OPTION){
-			 model.readData(VotingManager.getInstance().getData(chooser.getSelectedFile().getAbsolutePath()));
-			 view.loadComboBoxContent(model.getDistrictNames());
-			 loadData();
-			 printData();
-			 }
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			JFileChooser chooser = new JFileChooser();
+			chooser.setCurrentDirectory(new java.io.File("."));
+			chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+			chooser.setAcceptAllFileFilterUsed(false);
+			int rueckgabeWert = chooser.showOpenDialog(null);
+			if(rueckgabeWert == JFileChooser.APPROVE_OPTION){
+				view.printLog("Wahlverzeichnis geladen: '"+chooser.getSelectedFile().getName()+"'.");
+				convertLogMessageFromReader(VotingManager.getInstance().readData(chooser.getSelectedFile().getAbsolutePath()));
+				model.readData(VotingManager.getInstance().getData());
+				view.loadComboBoxContent(model.getDistrictNames());
+				loadData();
+				printData();
+			}
 		
-	}
-
-		   
- }
+		}
+ 
+    }
 
 }
