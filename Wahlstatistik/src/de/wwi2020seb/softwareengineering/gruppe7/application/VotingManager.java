@@ -12,7 +12,7 @@ public class VotingManager {
 
 	public ArrayList<ResultList> getData() {
 		ArrayList<ResultList> results;
-		results = CSVReader.getInstance().getData();
+		results = CSVReader.getInstance().getData("src/de/wwi2020seb/softwareengineering/gruppe7/votes/");
 		VotingCalculator vc = this.new VotingCalculator();
 		ArrayList<String> names = vc.getAllNames(results);
 		for(ResultList r : results) {
@@ -39,7 +39,7 @@ public class VotingManager {
 				for(ResultMap m : r.getResults()) {
 					if(m.getName().equalsIgnoreCase(s))
 							containsName = true;
-				}
+				} 
 				if(!containsName) {
 					r.addResult(new ResultMap(s, 0));
 				}

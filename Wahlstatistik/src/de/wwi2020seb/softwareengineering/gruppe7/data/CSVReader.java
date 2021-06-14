@@ -32,9 +32,9 @@ public class CSVReader {
 		return r;
 	}
 	
-	public ArrayList<ResultList> getData() {
+	public ArrayList<ResultList> getData(String filePath) {
 		
-		f = new File("src/de/wwi2020seb/softwareengineering/gruppe7/votes/");
+		f = new File(filePath);
 		fileArray = f.listFiles();
 
 		

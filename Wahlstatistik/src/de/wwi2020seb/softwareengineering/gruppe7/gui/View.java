@@ -50,7 +50,7 @@ public class View extends JFrame {
 		districtLabel.setBounds(241, 23, 59, 21);
 		getContentPane().add(districtLabel);
 		
-	}
+	} 
 	
 	public void printResultOfDistrict(ResultList r) {
 		r.getResults().sort(new ResultComparator());

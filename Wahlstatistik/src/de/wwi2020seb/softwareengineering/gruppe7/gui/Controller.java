@@ -62,7 +62,7 @@ public class Controller {
 	
 	public View getView() {
 		return view;
-	}
+	} 
 	 
 	public Model getModel() {
 		return model;
