@@ -64,7 +64,8 @@ public class CSVReader {
 		}
 		finally {
 			try {
-				br.close();
+				if(br != null) 
+					br.close();
 			}
 			catch(IOException e) {
 				e.printStackTrace();
