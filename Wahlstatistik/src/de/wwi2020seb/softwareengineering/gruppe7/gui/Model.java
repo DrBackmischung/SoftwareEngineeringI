@@ -3,7 +3,6 @@ package de.wwi2020seb.softwareengineering.gruppe7.gui;
 import java.util.ArrayList;
 
 import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultList;
-import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultMap;
 
 public class Model {
 	

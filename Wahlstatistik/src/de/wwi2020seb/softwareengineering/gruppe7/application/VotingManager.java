@@ -10,9 +10,9 @@ public class VotingManager {
 	
 	private static VotingManager vm;
 
-	public ArrayList<ResultList> getData() {
+	public ArrayList<ResultList> getData(String dataPath) {
 		ArrayList<ResultList> results;
-		results = CSVReader.getInstance().getData("src/de/wwi2020seb/softwareengineering/gruppe7/votes/");
+		results = CSVReader.getInstance().getData(dataPath);
 		VotingCalculator vc = this.new VotingCalculator();
 		ArrayList<String> names = vc.getAllNames(results);
 		for(ResultList r : results) {
@@ -31,7 +31,7 @@ public class VotingManager {
 		return vm;
 	}
 	
-	public class VotingCalculator {
+	class VotingCalculator {
 			
 		public void enrichCandidates(ResultList r, ArrayList<String> names) {
 			for(String s : names) {
@@ -39,7 +39,7 @@ public class VotingManager {
 				for(ResultMap m : r.getResults()) {
 					if(m.getName().equalsIgnoreCase(s))
 							containsName = true;
-				} 
+				}
 				if(!containsName) {
 					r.addResult(new ResultMap(s, 0));
 				}
