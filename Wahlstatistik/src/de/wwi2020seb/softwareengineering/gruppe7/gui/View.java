@@ -17,8 +17,8 @@ public class View extends JFrame {
 	@SuppressWarnings("unused")
 	private Controller c;
 	private JComboBox<String> districtComboBox;
-	List cityResultList;
-	List districtResultList;
+	private List cityResultList;
+	private List districtResultList;
 	
 	public View(Controller c) {
 		
@@ -56,7 +56,7 @@ public class View extends JFrame {
 		r.getResults().sort(new ResultComparator());
 		districtResultList.removeAll();
 		for(ResultMap m : r.getResults()) {
-			districtResultList.add(m.getName()+"\t"+ "- "+m.getVoteCount()+" Stimmen ("+m.getPercentage()+"%)");
+			districtResultList.add(m.toString());
 		}
 	}
 	
@@ -64,7 +64,7 @@ public class View extends JFrame {
 		cityResultList.removeAll();
 		r.getResults().sort(new ResultComparator());
 		for(ResultMap m : r.getResults()) {
-			cityResultList.add(m.getName()+"\t - "+m.getVoteCount()+" Stimmen ("+m.getPercentage()+"%)");
+			cityResultList.add(m.toString());
 		}
 	}
 	

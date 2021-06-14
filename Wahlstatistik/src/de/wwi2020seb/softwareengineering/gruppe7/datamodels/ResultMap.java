@@ -1,6 +1,5 @@
 package de.wwi2020seb.softwareengineering.gruppe7.datamodels;
 
-@SuppressWarnings("rawtypes")
 public class ResultMap 
 //implements Comparable 
 {
@@ -13,6 +12,10 @@ public class ResultMap
 		this.name = name;
 		this.votes = votes;
 		percentage = 0.0;
+	}
+	
+	public String toString() {
+		return name+"\t"+ "- "+votes+" Stimmen ("+percentage+"%)";
 	}
 
 	public String getName() {
