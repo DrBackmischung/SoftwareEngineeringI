@@ -1,4 +1,4 @@
-package test.de.wwi2020seb.softwareengineering.gruppe7.application;
+package test.de.wwi2020seb.softwareengineering.gruppe7.gui;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -13,7 +13,7 @@ public class ControllerTest {
 	@DisplayName("Test Singelton")
 	public void testSingelton(){
 	 	Controller firstController = Controller.getInstance();
-	 	Controller secondController = Controller.getInstance();
+	 	Controller secondController = Controller.getInstance(); 
 	 	assertEquals(firstController, secondController);
 	}
 	

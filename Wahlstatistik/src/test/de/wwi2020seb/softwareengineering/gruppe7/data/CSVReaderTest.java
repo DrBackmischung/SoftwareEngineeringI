@@ -1,4 +1,4 @@
-package test.de.wwi2020seb.softwareengineering.gruppe7.application;
+package test.de.wwi2020seb.softwareengineering.gruppe7.data;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ public class CSVReaderTest {
 	CSVReader testReader = CSVReader.getInstance();
 	ArrayList<ResultList> resultLists = new ArrayList<ResultList>();
 	ArrayList<ResultList> expected = new ArrayList<ResultList>();
-    @Test
+	@Test
 	@DisplayName("CSV Reader Test")
 	public void testCSVReader() {
 	
