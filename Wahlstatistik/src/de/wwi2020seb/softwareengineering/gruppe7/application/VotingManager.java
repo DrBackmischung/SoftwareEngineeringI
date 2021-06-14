@@ -31,7 +31,7 @@ public class VotingManager {
 		return vm;
 	}
 	
-	class VotingCalculator {
+	public class VotingCalculator {
 			
 		public void enrichCandidates(ResultList r, ArrayList<String> names) {
 			for(String s : names) {
