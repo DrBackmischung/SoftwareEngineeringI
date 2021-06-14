@@ -10,9 +10,9 @@ public class VotingManager {
 	
 	private static VotingManager vm;
 
-	public ArrayList<ResultList> getData() {
+	public ArrayList<ResultList> getData(String dataPath) {
 		ArrayList<ResultList> results;
-		results = CSVReader.getInstance().getData();
+		results = CSVReader.getInstance().getData(dataPath);
 		VotingCalculator vc = this.new VotingCalculator();
 		ArrayList<String> names = vc.getAllNames(results);
 		for(ResultList r : results) {

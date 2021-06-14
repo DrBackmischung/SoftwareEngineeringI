@@ -32,9 +32,9 @@ public class CSVReader {
 		return r;
 	}
 	
-	public ArrayList<ResultList> getData() {
+	public ArrayList<ResultList> getData(String dataPath) {
 		
-		f = new File("src/de/wwi2020seb/softwareengineering/gruppe7/votes/");
+		f = new File(dataPath);
 		fileArray = f.listFiles();
 
 		
@@ -62,12 +62,18 @@ public class CSVReader {
 			e.printStackTrace();
 			System.out.println("Probleme beim lesen der Datei. Stellen sie sicher, dass nur CSV Dateien gelesen werden");
 		}
+			catch(Exception e) {
+				
+			}
 		finally {
 			try {
 				br.close();
 			}
 			catch(IOException e) {
 				e.printStackTrace();
+			}
+		    catch(Exception e) {
+	
 			}
 		}
 		return allResultLists;

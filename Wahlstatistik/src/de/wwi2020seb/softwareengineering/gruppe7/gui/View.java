@@ -2,6 +2,7 @@ package de.wwi2020seb.softwareengineering.gruppe7.gui;
 
 import java.awt.Label;
 import java.awt.List;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.JComboBox;
@@ -10,6 +11,7 @@ import javax.swing.JFrame;
 import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultComparator;
 import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultList;
 import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultMap;
+import javax.swing.JButton;
 
 public class View extends JFrame {
 	
@@ -50,6 +52,10 @@ public class View extends JFrame {
 		districtLabel.setBounds(241, 23, 59, 21);
 		getContentPane().add(districtLabel);
 		
+		JButton btnNewButton = new JButton("Load Data");
+		btnNewButton.setBounds(334, 16, 89, 23);
+		btnNewButton.addActionListener(c.new LoadDataListener());
+		getContentPane().add(btnNewButton);
 	}
 	
 	public void printResultOfDistrict(ResultList r) {
@@ -78,5 +84,4 @@ public class View extends JFrame {
 	public String getComboBoxContent() {
 		return (String) districtComboBox.getSelectedItem();
 	}
-	
 }

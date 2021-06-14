@@ -3,6 +3,8 @@ package de.wwi2020seb.softwareengineering.gruppe7.gui;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JFileChooser;
+
 import de.wwi2020seb.softwareengineering.gruppe7.application.VotingManager;
 import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultList;
 import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultMap;
@@ -15,7 +17,7 @@ public class Controller {
 	
 	private Controller() {
 		model = Model.getInstance();
-		model.readData(VotingManager.getInstance().getData());
+		model.readData(VotingManager.getInstance().getData(""));
 	}
 
 	public static Controller getInstance() {
@@ -68,6 +70,12 @@ public class Controller {
 		return model;
 	}
 	
+	public void updateData(String dateipfad) {
+		
+		model.readData(VotingManager.getInstance().getData(dateipfad));
+		startApplication();
+	}
+	
 	public class ComboBoxListener implements ActionListener {
 		
 		public ComboBoxListener() { }
@@ -77,7 +85,23 @@ public class Controller {
 			loadData();
 			printData();
 		}
-
 	}
+	
+	   public class LoadDataListener implements ActionListener{
+		   
+		   public LoadDataListener() { }
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			JFileChooser chooser = new JFileChooser();
+			int rueckgabeWert = chooser.showOpenDialog(null);
+			 if(rueckgabeWert == JFileChooser.APPROVE_OPTION){
+				 updateData(chooser.getSelectedFile().getName());  
+				 }
+			
+		}
+
+		   
+	   }
 
 }
