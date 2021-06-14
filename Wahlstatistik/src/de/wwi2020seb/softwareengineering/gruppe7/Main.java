@@ -1,5 +1,6 @@
 package de.wwi2020seb.softwareengineering.gruppe7;
 
+
 import de.wwi2020seb.softwareengineering.gruppe7.gui.Controller;
 
 public class Main {
