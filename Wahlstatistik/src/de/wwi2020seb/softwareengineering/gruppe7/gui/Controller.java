@@ -95,11 +95,16 @@ public class Controller {
 			int rueckgabeWert = chooser.showOpenDialog(null);
 			if(rueckgabeWert == JFileChooser.APPROVE_OPTION){
 				view.printLog("Wahlverzeichnis geladen: '"+chooser.getSelectedFile().getName()+"'.");
-				convertLogMessageFromReader(VotingManager.getInstance().readData(chooser.getSelectedFile().getAbsolutePath()));
+				int i = VotingManager.getInstance().readData(chooser.getSelectedFile().getAbsolutePath());
+				convertLogMessageFromReader(i);
 				model.readData(VotingManager.getInstance().getData());
 				view.loadComboBoxContent(model.getDistrictNames());
-				loadData();
-				printData();
+				if(i != 0) {
+					view.clear();
+				} else {
+					loadData();
+					printData();
+				}
 			}
 		
 		}

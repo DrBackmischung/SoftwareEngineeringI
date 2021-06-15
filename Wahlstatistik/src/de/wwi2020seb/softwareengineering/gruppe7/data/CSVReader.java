@@ -76,7 +76,6 @@ public class CSVReader {
 		}
 		
 		if(allResultLists.size() == 0) {
-			System.out.println(3);
 			return 3;
 		}
 		

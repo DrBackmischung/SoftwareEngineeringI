@@ -1,8 +1,6 @@
 package de.wwi2020seb.softwareengineering.gruppe7.datamodels;
 
-public class ResultMap 
-//implements Comparable 
-{
+public class ResultMap {
 	
 	private String name;
 	private int votes;
@@ -37,13 +35,25 @@ public class ResultMap
 	public double getPercentage() {
 		return percentage;
 	}
-
-	/*
-	 * Automatische Sortierung nach Stimmenanzahl
-	 */
-//	@Override
-//	public int compareTo(Object o) {
-//		return this.getVoteCount() - ((ResultMap) o).getVoteCount();
-//	}
+	
+	public boolean equals(Object o) {
+		if(this == o)
+			return true;
+		if(o == null)
+			return false;
+		if(this.getClass() != o.getClass())
+			return false;
+		if(this.getName().equals(((ResultMap) o).getName()))
+			return false;
+		if(this.getVoteCount() == ((ResultMap) o).getVoteCount())
+			return false;
+		if(this.getPercentage()== ((ResultMap) o).getPercentage())
+			return false;
+		return true;
+	}
+	
+	public int hashCode() {
+		return this.getName().hashCode() ^ this.getVoteCount() ^ (int) this.getPercentage();
+	}
 	
 }
