@@ -99,4 +99,10 @@ public class View extends JFrame {
 		exceptionLabel.setText(">> "+msg);
 	}
 	
+	public void clear() {
+		cityResultList.removeAll();
+		districtComboBox.removeAll();
+		districtResultList.removeAll();
+	}
+	
 }
