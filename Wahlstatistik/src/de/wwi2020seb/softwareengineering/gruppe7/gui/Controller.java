@@ -6,6 +6,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JFileChooser;
 
 import de.wwi2020seb.softwareengineering.gruppe7.application.VotingManager;
+import de.wwi2020seb.softwareengineering.gruppe7.datamodels.AscendingResultComparator;
+import de.wwi2020seb.softwareengineering.gruppe7.datamodels.DescendingResultComparator;
 import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultList;
 
 public class Controller {
@@ -13,6 +15,8 @@ public class Controller {
 	private Model model;
 	private View view;
 	private static Controller controller;
+	public final int ASCENDING = 1;
+	public final int DESCENDING = 2;
 	
 	private Controller() {
 		model = Model.getInstance();
@@ -110,5 +114,37 @@ public class Controller {
 		}
  
     }
+	
+	public class SortListener implements ActionListener {
+		
+		private int i;
+		
+		public SortListener(int i) { 
+			this.i = i;
+		}
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if(i == ASCENDING) {
+				view.switchComparator(new AscendingResultComparator());
+			} else if(i == DESCENDING) {
+					view.switchComparator(new DescendingResultComparator());
+			} else {
+				view.printLog("Sortierung nicht moeglich.");
+			}
+			printData();
+		}
+	}
+	
+	public class ExportListener implements ActionListener {
+		
+		public ExportListener() { }
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			loadData();
+			printData();
+		}
+	}
 
 }

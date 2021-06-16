@@ -3,11 +3,12 @@ package de.wwi2020seb.softwareengineering.gruppe7.gui;
 import java.awt.Label;
 import java.awt.List;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 
-import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultComparator;
+import de.wwi2020seb.softwareengineering.gruppe7.datamodels.DescendingResultComparator;
 import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultList;
 import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultMap;
 import javax.swing.JButton;
@@ -23,8 +24,14 @@ public class View extends JFrame {
 	private List cityResultList;
 	private List districtResultList;
 	private JLabel exceptionLabel;
+	private JButton sortDescending;
+	private JButton sortAscending;
+	private JButton exportCityResult;
+	private Comparator<ResultMap> comp;
 	
 	public View(Controller c) {
+		
+		comp = new DescendingResultComparator();
 		
 		this.c = c;
 		
@@ -66,10 +73,25 @@ public class View extends JFrame {
 		exceptionLabel = new JLabel(">> Bitte waehlen Sie ein Verzeichnis, in dem sich Wahlergebnisse befinden!");
 		exceptionLabel.setBounds(10, 335, 449, 14);
 		getContentPane().add(exceptionLabel);
+		
+		sortAscending = new JButton("Aufsteigend...");
+		sortAscending.setBounds(241, 290, 110, 23);
+		sortAscending.addActionListener(c.new SortListener(c.ASCENDING));
+		getContentPane().add(sortAscending);
+		
+		sortDescending = new JButton("Absteigend...");
+		sortDescending.setBounds(351, 290, 110, 23);
+		sortDescending.addActionListener(c.new SortListener(c.DESCENDING));
+		getContentPane().add(sortDescending);
+		
+		exportCityResult = new JButton("Stadtergebnis exportieren");
+		exportCityResult.setBounds(10, 290, 220, 23);
+		exportCityResult.addActionListener(c.new ExportListener());
+		getContentPane().add(exportCityResult);
 	}
 	
 	public void printResultOfDistrict(ResultList r) {
-		r.getResults().sort(new ResultComparator());
+		r.getResults().sort(comp);
 		districtResultList.removeAll();
 		for(ResultMap m : r.getResults()) {
 			districtResultList.add(m.toString());
@@ -78,7 +100,7 @@ public class View extends JFrame {
 	
 	public void printResultOfCity(ResultList r) {
 		cityResultList.removeAll();
-		r.getResults().sort(new ResultComparator());
+		r.getResults().sort(comp);
 		for(ResultMap m : r.getResults()) {
 			cityResultList.add(m.toString());
 		}
@@ -103,6 +125,10 @@ public class View extends JFrame {
 		cityResultList.removeAll();
 		districtComboBox.removeAll();
 		districtResultList.removeAll();
+	}
+	
+	public void switchComparator(Comparator<ResultMap> c) {
+		this.comp = c;
 	}
 	
 }
