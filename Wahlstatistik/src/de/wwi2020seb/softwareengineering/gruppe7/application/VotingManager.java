@@ -58,9 +58,12 @@ public class VotingManager {
 			}
 			for(ResultMap m: d.getResults() ) {
 				double result = m.getVoteCount();
-				double r = (result / votes * 100)*100;
+				double r = (result / votes * 100)*10;
 				r = (int) r;
-				r = (double) r/100;
+				if(r % 10 >= 5) {
+					r += 1;
+				} 
+				r = (double) r/10;
 				m.setPercentage(r);
 			}
 		}
