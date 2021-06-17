@@ -2,7 +2,7 @@ package de.wwi2020seb.softwareengineering.gruppe7.datamodels;
 
 import java.util.Comparator;
 
-public class ResultComparator implements Comparator<ResultMap> {
+public class DescendingResultComparator implements Comparator<ResultMap> {
 
 	@Override
 	public int compare(ResultMap o1, ResultMap o2) {
