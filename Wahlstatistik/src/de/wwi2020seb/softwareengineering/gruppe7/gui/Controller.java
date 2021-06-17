@@ -72,6 +72,15 @@ public class Controller {
 		case 3:
 			view.printLog("Im gewaehlten Dateipfad befinden sich keine Wahldaten!");
 			break;
+		case 4:
+			view.printLog("Die Datei konnte nicht erstellt werden!");
+			break;
+		case 5:
+			view.printLog("Der Datenreader ist fehlerhaft!");
+			break;
+		case 6:
+			view.printLog("Datei konnte nicht erstellt werden!");
+			break;
 		}
 	}
 	
@@ -142,8 +151,19 @@ public class Controller {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			loadData();
-			printData();
+			JFileChooser chooser = new JFileChooser();
+		    chooser.setCurrentDirectory(new java.io.File("."));
+		    int retrival = chooser.showSaveDialog(null);
+		    if (retrival == JFileChooser.APPROVE_OPTION) {
+		    	int i = 0;
+		    	if(chooser.getSelectedFile().toString().endsWith(".csv")) {
+		    		i = VotingManager.getInstance().saveData(chooser.getSelectedFile().toString(), model.getResultForCity());
+		    	} else {
+		    		i = VotingManager.getInstance().saveData(chooser.getSelectedFile() + ".csv", model.getResultForCity());
+		    	}
+		    	view.printLog("Stadtergebnis exportiert!");
+		    	convertLogMessageFromReader(i);
+		    }
 		}
 	}
 

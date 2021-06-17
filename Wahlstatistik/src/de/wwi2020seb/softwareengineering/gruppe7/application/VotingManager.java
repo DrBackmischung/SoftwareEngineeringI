@@ -3,6 +3,7 @@ package de.wwi2020seb.softwareengineering.gruppe7.application;
 import java.util.ArrayList;
 
 import de.wwi2020seb.softwareengineering.gruppe7.data.CSVReader;
+import de.wwi2020seb.softwareengineering.gruppe7.data.CSVWriter;
 import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultList;
 import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultMap;
 
@@ -99,6 +100,10 @@ public class VotingManager {
 			return names;
 		}
 		
+	}
+	
+	public int saveData(String path, ResultList r) {
+		return CSVWriter.getInstance().saveData(path, r);
 	}
 	
 }
