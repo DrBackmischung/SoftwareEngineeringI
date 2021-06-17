@@ -6,6 +6,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JFileChooser;
 
 import de.wwi2020seb.softwareengineering.gruppe7.application.VotingManager;
+import de.wwi2020seb.softwareengineering.gruppe7.datamodels.AscendingResultComparator;
+import de.wwi2020seb.softwareengineering.gruppe7.datamodels.DescendingResultComparator;
 import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultList;
 
 public class Controller {
@@ -13,6 +15,8 @@ public class Controller {
 	private Model model;
 	private View view;
 	private static Controller controller;
+	public final int ASCENDING = 1;
+	public final int DESCENDING = 2;
 	
 	private Controller() {
 		model = Model.getInstance();
@@ -68,6 +72,15 @@ public class Controller {
 		case 3:
 			view.printLog("Im gewaehlten Dateipfad befinden sich keine Wahldaten!");
 			break;
+		case 4:
+			view.printLog("Die Datei konnte nicht erstellt werden!");
+			break;
+		case 5:
+			view.printLog("Der Datenreader ist fehlerhaft!");
+			break;
+		case 6:
+			view.printLog("Datei konnte nicht erstellt werden!");
+			break;
 		}
 	}
 	
@@ -110,5 +123,48 @@ public class Controller {
 		}
  
     }
+	
+	public class SortListener implements ActionListener {
+		
+		private int i;
+		
+		public SortListener(int i) { 
+			this.i = i;
+		}
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if(i == ASCENDING) {
+				view.switchComparator(new AscendingResultComparator());
+			} else if(i == DESCENDING) {
+					view.switchComparator(new DescendingResultComparator());
+			} else {
+				view.printLog("Sortierung nicht moeglich.");
+			}
+			printData();
+		}
+	}
+	
+	public class ExportListener implements ActionListener {
+		
+		public ExportListener() { }
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			JFileChooser chooser = new JFileChooser();
+		    chooser.setCurrentDirectory(new java.io.File("."));
+		    int retrival = chooser.showSaveDialog(null);
+		    if (retrival == JFileChooser.APPROVE_OPTION) {
+		    	int i = 0;
+		    	if(chooser.getSelectedFile().toString().endsWith(".csv")) {
+		    		i = VotingManager.getInstance().saveData(chooser.getSelectedFile().toString(), model.getResultForCity());
+		    	} else {
+		    		i = VotingManager.getInstance().saveData(chooser.getSelectedFile() + ".csv", model.getResultForCity());
+		    	}
+		    	view.printLog("Stadtergebnis exportiert!");
+		    	convertLogMessageFromReader(i);
+		    }
+		}
+	}
 
 }

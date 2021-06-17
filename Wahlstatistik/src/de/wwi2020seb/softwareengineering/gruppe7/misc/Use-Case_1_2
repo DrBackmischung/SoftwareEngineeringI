@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-17T12:14:49.529Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36" etag="TAApCjABzb1jY0Stll0J" version="14.7.9" type="github">
+<mxfile host="app.diagrams.net" modified="2021-06-17T12:17:39.663Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36" etag="HBisN6dmSiIzKYEo7Wat" version="14.7.9" type="github">
   <diagram id="DC_wvN1_ldKL-by8Xuzi" name="Page-1">
     <mxGraphModel dx="1360" dy="802" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
       <root>
@@ -60,6 +60,9 @@
         <mxCell id="_uVWnQ1t6ezPo4v6ztnH-17" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=0;" parent="1" vertex="1">
           <mxGeometry x="860" y="1179" width="40" height="20" as="geometry" />
         </mxCell>
+        <mxCell id="lS049jOr51neBCGjOQKM-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=0;endArrow=classic;endFill=1;" edge="1" parent="1" source="_uVWnQ1t6ezPo4v6ztnH-18" target="lS049jOr51neBCGjOQKM-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="_uVWnQ1t6ezPo4v6ztnH-18" value="Stadtergebnis berechnen" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="720" y="1320" width="120" height="80" as="geometry" />
         </mxCell>
@@ -67,6 +70,9 @@
           <mxGeometry x="770" y="1268" width="40" height="20" as="geometry" />
         </mxCell>
         <mxCell id="_uVWnQ1t6ezPo4v6ztnH-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=classic;endFill=1;" parent="1" source="_uVWnQ1t6ezPo4v6ztnH-21" target="_uVWnQ1t6ezPo4v6ztnH-12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lS049jOr51neBCGjOQKM-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=classic;endFill=1;startArrow=none;startFill=0;" edge="1" parent="1" source="_uVWnQ1t6ezPo4v6ztnH-21" target="XWsCo3r9qdyOsSQbZS02-1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="_uVWnQ1t6ezPo4v6ztnH-21" value="Bezirk auswählen" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -89,6 +95,29 @@
         </mxCell>
         <mxCell id="XWsCo3r9qdyOsSQbZS02-4" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="458" y="1180" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="lS049jOr51neBCGjOQKM-2" value="Stadtergebnis exportieren" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="1320" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lS049jOr51neBCGjOQKM-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=1;entryDx=0;entryDy=0;startArrow=none;startFill=0;endArrow=classic;endFill=1;" edge="1" parent="1" source="lS049jOr51neBCGjOQKM-3" target="XWsCo3r9qdyOsSQbZS02-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="1520" />
+              <mxPoint x="260" y="1228" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lS049jOr51neBCGjOQKM-3" value="Ergebnis in CSV Datei speichern" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="1480" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lS049jOr51neBCGjOQKM-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=none;startFill=0;endArrow=block;endFill=0;" edge="1" parent="1" source="lS049jOr51neBCGjOQKM-4" target="lS049jOr51neBCGjOQKM-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lS049jOr51neBCGjOQKM-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;startArrow=none;startFill=0;endArrow=classic;endFill=1;" edge="1" parent="1" source="lS049jOr51neBCGjOQKM-4" target="lS049jOr51neBCGjOQKM-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lS049jOr51neBCGjOQKM-4" value="Verzeichnis auswählen" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="1320" width="120" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

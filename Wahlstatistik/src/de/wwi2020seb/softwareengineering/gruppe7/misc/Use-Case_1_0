@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-06-15T17:31:41.601Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="iR9FXwDP8KrZJtVpFbDi" version="14.7.8" type="github">
+<mxfile host="app.diagrams.net" modified="2021-06-17T12:14:32.890Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36" etag="J90HzjSHtUdmu0Ur7sc2" version="14.7.9" type="github">
   <diagram id="DC_wvN1_ldKL-by8Xuzi" name="Page-1">
-    <mxGraphModel dx="648" dy="382" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
+    <mxGraphModel dx="1360" dy="802" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -52,7 +52,7 @@
         <mxCell id="_uVWnQ1t6ezPo4v6ztnH-17" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=0;" parent="1" vertex="1">
           <mxGeometry x="780" y="1179" width="40" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="_uVWnQ1t6ezPo4v6ztnH-18" value="Bezirksliste erstellen" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="_uVWnQ1t6ezPo4v6ztnH-18" value="Stadtergebnis berechnen" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="640" y="1320" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="_uVWnQ1t6ezPo4v6ztnH-20" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=90;" parent="1" vertex="1">
@@ -73,7 +73,7 @@
             <mxPoint x="830" y="1060" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="dMd0xGHOsnzwWhVunzJZ-1" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="dMd0xGHOsnzwWhVunzJZ-1" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="381" y="1180" width="40" height="20" as="geometry" />
         </mxCell>
       </root>

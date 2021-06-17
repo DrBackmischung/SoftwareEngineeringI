@@ -3,6 +3,7 @@ package de.wwi2020seb.softwareengineering.gruppe7.application;
 import java.util.ArrayList;
 
 import de.wwi2020seb.softwareengineering.gruppe7.data.CSVReader;
+import de.wwi2020seb.softwareengineering.gruppe7.data.CSVWriter;
 import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultList;
 import de.wwi2020seb.softwareengineering.gruppe7.datamodels.ResultMap;
 
@@ -58,9 +59,12 @@ public class VotingManager {
 			}
 			for(ResultMap m: d.getResults() ) {
 				double result = m.getVoteCount();
-				double r = (result / votes * 100)*100;
+				double r = (result / votes * 100)*10;
 				r = (int) r;
-				r = (double) r/100;
+				if(r % 10 >= 5) {
+					r += 1;
+				} 
+				r = (double) r/10;
 				m.setPercentage(r);
 			}
 		}
@@ -96,6 +100,10 @@ public class VotingManager {
 			return names;
 		}
 		
+	}
+	
+	public int saveData(String path, ResultList r) {
+		return CSVWriter.getInstance().saveData(path, r);
 	}
 	
 }
