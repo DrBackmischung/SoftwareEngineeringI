@@ -37,57 +37,61 @@ public class View extends JFrame {
 		
 		this.setTitle("Wahlstatistik");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 485, 399);
+		setBounds(100, 100, 548, 426);
 		getContentPane().setLayout(null);
 		
 		cityResultList = new List();
-		cityResultList.setBounds(10, 77, 220, 198);
+		cityResultList.setBounds(10, 66, 253, 246);
 		getContentPane().add(cityResultList);
 		
 		districtResultList = new List();
-		districtResultList.setBounds(241, 77, 220, 198);
+		districtResultList.setBounds(266, 96, 253, 216);
 		getContentPane().add(districtResultList);
 		
 		districtComboBox = new JComboBox<>();
-		districtComboBox.setBounds(241, 50, 218, 21);
+		districtComboBox.setBounds(339, 44, 183, 21);
 		districtComboBox.addActionListener(c.new ComboBoxListener());
 		getContentPane().add(districtComboBox);
 		
 		Label cityLabel = new Label("Gesamt");
-		cityLabel.setBounds(10, 23, 59, 21);
+		cityLabel.setBounds(10, 39, 59, 21);
 		getContentPane().add(cityLabel);
 		
 		Label districtLabel = new Label("Bezirke");
-		districtLabel.setBounds(241, 23, 59, 21);
+		districtLabel.setBounds(283, 44, 50, 21);
 		getContentPane().add(districtLabel);
 		
 		JButton loadResultDirectory = new JButton("Wahlverzeichnis oeffnen...");
-		loadResultDirectory.setBounds(10, 49, 220, 22);
+		loadResultDirectory.setBounds(10, 11, 512, 22);
 		loadResultDirectory.addActionListener(c.new LoadDataListener());
 		getContentPane().add(loadResultDirectory);
 		
 		JSeparator separator = new JSeparator();
-		separator.setBounds(10, 324, 449, 2);
+		separator.setBounds(10, 361, 509, 2);
 		getContentPane().add(separator);
 		
 		exceptionLabel = new JLabel(">> Bitte waehlen Sie ein Verzeichnis, in dem sich Wahlergebnisse befinden!");
-		exceptionLabel.setBounds(10, 335, 449, 14);
+		exceptionLabel.setBounds(10, 372, 509, 14);
 		getContentPane().add(exceptionLabel);
 		
 		sortAscending = new JButton("Aufsteigend...");
-		sortAscending.setBounds(241, 290, 110, 23);
+		sortAscending.setBounds(266, 327, 125, 23);
 		sortAscending.addActionListener(c.new SortListener(c.ASCENDING));
 		getContentPane().add(sortAscending);
 		
 		sortDescending = new JButton("Absteigend...");
-		sortDescending.setBounds(351, 290, 110, 23);
+		sortDescending.setBounds(394, 327, 125, 23);
 		sortDescending.addActionListener(c.new SortListener(c.DESCENDING));
 		getContentPane().add(sortDescending);
 		
 		exportCityResult = new JButton("Stadtergebnis exportieren");
-		exportCityResult.setBounds(10, 290, 220, 23);
+		exportCityResult.setBounds(10, 327, 253, 23);
 		exportCityResult.addActionListener(c.new ExportListener());
 		getContentPane().add(exportCityResult);
+		
+		Label chosenDistrictLabel = new Label("Ausgewaehlter Bezirk");
+		chosenDistrictLabel.setBounds(269, 69, 135, 21);
+		getContentPane().add(chosenDistrictLabel);
 	}
 	
 	public void printResultOfDistrict(ResultList r) {
@@ -130,5 +134,4 @@ public class View extends JFrame {
 	public void switchComparator(Comparator<ResultMap> c) {
 		this.comp = c;
 	}
-	
 }
