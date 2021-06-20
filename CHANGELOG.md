@@ -15,3 +15,6 @@
   - Added multiple ways of sorting the lists
   - Added possibility to export the city result
   - Changed the View a bit
+
+1.2.1:
+  - Changed Singleton modifier
