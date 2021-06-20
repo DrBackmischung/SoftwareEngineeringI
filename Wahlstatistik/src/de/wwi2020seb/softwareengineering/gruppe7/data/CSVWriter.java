@@ -12,7 +12,7 @@ public class CSVWriter {
 	
 	private static CSVWriter r;
 	
-	public CSVWriter() {
+	private CSVWriter() {
 		
 	}
 	

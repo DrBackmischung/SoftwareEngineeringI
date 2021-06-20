@@ -37,6 +37,10 @@ public class VotingManager {
 		return vm;
 	}
 	
+	private VotingManager() {
+		
+	}
+	
 	public class VotingCalculator {
 			
 		public void enrichCandidates(ResultList r, ArrayList<String> names) {

@@ -17,7 +17,7 @@ public class Model {
 		return model;
 	}
 	
-	public Model() {
+	private Model() {
 		results = new ArrayList<>();
 	}
 	

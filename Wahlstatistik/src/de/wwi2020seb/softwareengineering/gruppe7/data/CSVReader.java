@@ -21,7 +21,7 @@ public class CSVReader {
 	private File fileArray[];
 	private static CSVReader r;
 	
-	public CSVReader() {
+	private CSVReader() {
 		
 	}
 	
