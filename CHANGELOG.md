@@ -10,3 +10,8 @@
 
 1.1.1:
   - Updated VotingCalculator: The result is now calculated correctly, rounding a double sometimes did not work properly
+
+1.2:
+  - Added multiple ways of sorting the lists
+  - Added possibility to export the city result
+  - Changed the View a bit
